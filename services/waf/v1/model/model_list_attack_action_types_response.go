@@ -9,10 +9,10 @@ import (
 // ListAttackActionTypesResponse Response Object
 type ListAttackActionTypesResponse struct {
 
-	// CountItem的总数量
+	// AttackActionCountItem的总数量
 	Total *int32 `json:"total,omitempty"`
 
-	// CountItem详细信息
+	// AttackActionCountItem详细信息
 	Items          *[]AttackActionCountItem `json:"items,omitempty"`
 	HttpStatusCode int                      `json:"-"`
 }

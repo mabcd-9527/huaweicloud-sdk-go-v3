@@ -12,7 +12,7 @@ import (
 // CustomAction 精准防护规则命中后操作对象
 type CustomAction struct {
 
-	// 操作类型。   - “block”：拦截。   - “pass”：放行。   - “log”：仅记录
+	// 操作类型。   - block：拦截  - pass：放行   - log：仅记录
 	Category CustomActionCategory `json:"category"`
 
 	// 攻击惩罚规则id，只有当category参数值为block时才可配置该参数

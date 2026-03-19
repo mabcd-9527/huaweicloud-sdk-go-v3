@@ -12,7 +12,7 @@ import (
 // ShowPolicyGeoipMapRequest Request Object
 type ShowPolicyGeoipMapRequest struct {
 
-	// **参数解释：** 语言的类型 - cn代表中文 - en代表英文  **约束限制：** 不涉及 **取值范围：** - cn - en  **默认取值：** - cn
+	// **参数解释：** 语言类型 **约束限制：** 不涉及 **取值范围：** - cn 中文 - en 英文 **默认取值：** cn
 	Lang *ShowPolicyGeoipMapRequestLang `json:"lang,omitempty"`
 }
 

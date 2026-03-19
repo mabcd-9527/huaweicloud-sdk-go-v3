@@ -9,10 +9,10 @@ import (
 // ListInstanceReplicationPolicyExecSubTasksResponse Response Object
 type ListInstanceReplicationPolicyExecSubTasksResponse struct {
 
-	// 老化策略执行记录子任务列表
-	Subtasks *[]SubtaskDetail `json:"subtasks,omitempty"`
+	// 镜像同步策略执行记录子任务列表
+	SubTasks *[]SubtaskDetail `json:"sub_tasks,omitempty"`
 
-	// 老化策略执行记录子任务总数
+	// 镜像同步策略执行记录子任务总数
 	Total          *int32 `json:"total,omitempty"`
 	HttpStatusCode int    `json:"-"`
 }

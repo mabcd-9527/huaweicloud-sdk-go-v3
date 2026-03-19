@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// CreateIpReputationRuleResponseBodyAction **参数解释：** 防护动作配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+// CreateIpReputationRuleResponseBodyAction **参数解释：** 防护动作配置 **约束限制：** 同一个标签在多个规则中只能出现一次，即多个规则的标签列表不允许重合 **取值范围：** 不涉及 **默认取值：** 不涉及
 type CreateIpReputationRuleResponseBodyAction struct {
 
 	// **参数解释：** 动作类型（如log表示仅记录） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及

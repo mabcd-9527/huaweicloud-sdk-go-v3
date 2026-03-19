@@ -9,10 +9,10 @@ import (
 // ListTopDomainsResponse Response Object
 type ListTopDomainsResponse struct {
 
-	// CountItem的总数量
+	// TopDomainsCountItem的总数量
 	Total *int32 `json:"total,omitempty"`
 
-	// CountItem详细信息
+	// TopDomainsCountItem的详细信息
 	Items          *[]TopDomainsCountItem `json:"items,omitempty"`
 	HttpStatusCode int                    `json:"-"`
 }

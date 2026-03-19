@@ -11,7 +11,9 @@ type ListDedicatedHostAllTypesResponse struct {
 
 	// 指定可用的DeH类型。
 	DedicatedHostTypes *[]DedicatedHostType `json:"dedicated_host_types,omitempty"`
-	HttpStatusCode     int                  `json:"-"`
+
+	PageInfo       *PageInfo `json:"page_info,omitempty"`
+	HttpStatusCode int       `json:"-"`
 }
 
 func (o ListDedicatedHostAllTypesResponse) String() string {

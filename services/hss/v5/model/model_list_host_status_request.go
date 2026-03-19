@@ -57,6 +57,18 @@ type ListHostStatusRequest struct {
 	// **参数解释**: VPC的ID **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及
 	VpcId *string `json:"vpc_id,omitempty"`
 
+	// **参数解释**: 服务器名称列表 **约束限制**: 不涉及 **取值范围**: 单个服务器名称字符长度1-64位 批量查询服务器名称个数1-60个 采用逗号分割 **默认取值**: 不涉及
+	HostNameList *string `json:"host_name_list,omitempty"`
+
+	// **参数解释**: 服务器ID列表 **约束限制**: 不涉及 **取值范围**: 单个服务器ID字符长度1-36位 批量查询服务器ID个数1-100个 采用逗号分割 **默认取值**: 不涉及
+	HostIdList *string `json:"host_id_list,omitempty"`
+
+	// **参数解释**: 服务器公网IP列表 **约束限制**: 不涉及 **取值范围**: 单个服务器公网IP字符长度1-39位 批量查询服务器公网IP个数1-100个 采用逗号分割 **默认取值**: 不涉及
+	PublicIpList *string `json:"public_ip_list,omitempty"`
+
+	// **参数解释**: 服务器私有IP列表 **约束限制**: 不涉及 **取值范围**: 单个服务器私有IP字符长度1-39位 批量查询服务器私有IP个数1-100个 采用逗号分割 **默认取值**: 不涉及
+	PrivateIpList *string `json:"private_ip_list,omitempty"`
+
 	// **参数解释**: 存在告警事件 **约束限制**: 不涉及 **取值范围**: true或者false **默认取值**: 不涉及
 	HasIntrusion *bool `json:"has_intrusion,omitempty"`
 

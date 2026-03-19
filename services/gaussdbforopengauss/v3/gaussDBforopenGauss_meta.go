@@ -5683,8 +5683,7 @@ func GenReqDefForListLtsConfigs() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("InstanceId").
 		WithJsonTag("instance_id").
-		WithLocationType(def.Path))
-
+		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("InstanceName").
 		WithJsonTag("instance_name").

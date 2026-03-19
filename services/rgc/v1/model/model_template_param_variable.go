@@ -29,6 +29,9 @@ type TemplateParamVariable struct {
 
 	// 模板的部署参数变量的校验规则。
 	Validations *[]TemplateParamVariableValidation `json:"validations,omitempty"`
+
+	// 最近一次的部署参数。
+	LatestParam *string `json:"latest_param,omitempty"`
 }
 
 func (o TemplateParamVariable) String() string {

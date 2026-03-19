@@ -28,7 +28,7 @@ type ShowDDoSPeakResponse struct {
 	DdosCount *int32 `json:"ddos_count,omitempty"`
 
 	// 峰值时间
-	Utime          *int32 `json:"utime,omitempty"`
+	Utime          *int64 `json:"utime,omitempty"`
 	HttpStatusCode int    `json:"-"`
 }
 

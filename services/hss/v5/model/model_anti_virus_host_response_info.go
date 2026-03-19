@@ -24,6 +24,18 @@ type AntiVirusHostResponseInfo struct {
 	// **参数解释**: 主机上安装的杀毒Agent的唯一标识ID，用于关联主机与杀毒服务 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及
 	AgentId *string `json:"agent_id,omitempty"`
 
+	// **参数解释**: 操作系统名称 **取值范围**: 字符长度0-128位
+	OsName *string `json:"os_name,omitempty"`
+
+	// **参数解释**： 主机状态 **取值范围**: - ACTIVE：正在运行 - SHUTOFF：关机 - BUILDING：创建中 - ERROR：故障
+	HostStatus *string `json:"host_status,omitempty"`
+
+	// **参数解释**： Agent状态 **取值范围**: - installed：已安装 - not_installed：未安 - online：在线 - offline：离线 - install_failed：安装失败 - installing：安装中 - not_online：不在线的（除了在线以外的所有状态，仅作为查询条件）
+	AgentStatus *string `json:"agent_status,omitempty"`
+
+	// **参数解释**： 资产重要性。 **取值范围**： - important ：重要资产。 - common ：一般资产。 - test ：测试资产。
+	AssetValue *string `json:"asset_value,omitempty"`
+
 	// 操作系统类型，包含如下2种。   - Linux ：Linux   - Windows ：Windows
 	OsType *string `json:"os_type,omitempty"`
 

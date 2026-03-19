@@ -3741,16 +3741,16 @@ func GenReqDefForListRaspEvents() *def.HttpRequestDef {
 		WithJsonTag("enterprise_project_id").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("HostId").
+		WithJsonTag("host_id").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Offset").
 		WithJsonTag("offset").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Limit").
 		WithJsonTag("limit").
-		WithLocationType(def.Query))
-	reqDefBuilder.WithRequestField(def.NewFieldDef().
-		WithName("HostId").
-		WithJsonTag("host_id").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("StartTime").
@@ -6213,6 +6213,10 @@ func GenReqDefForExportAntiVirusResult() *def.HttpRequestDef {
 		WithJsonTag("severity_list").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Severities").
+		WithJsonTag("severities").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("AssetValue").
 		WithJsonTag("asset_value").
 		WithLocationType(def.Query))
@@ -6449,6 +6453,10 @@ func GenReqDefForListAntiVirusResult() *def.HttpRequestDef {
 		WithJsonTag("severity_list").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Severities").
+		WithJsonTag("severities").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("AssetValue").
 		WithJsonTag("asset_value").
 		WithLocationType(def.Query))
@@ -6471,6 +6479,14 @@ func GenReqDefForListAntiVirusResult() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("ManualIsolate").
 		WithJsonTag("manual_isolate").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("IdList").
+		WithJsonTag("id_list").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("FileHashList").
+		WithJsonTag("file_hash_list").
 		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
@@ -7931,6 +7947,10 @@ func GenReqDefForShowBaselineOverview() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("GroupId").
 		WithJsonTag("group_id").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("StatisticsType").
+		WithJsonTag("statistics_type").
 		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
@@ -9877,6 +9897,22 @@ func GenReqDefForListHostStatus() *def.HttpRequestDef {
 		WithJsonTag("vpc_id").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("HostNameList").
+		WithJsonTag("host_name_list").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("HostIdList").
+		WithJsonTag("host_id_list").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("PublicIpList").
+		WithJsonTag("public_ip_list").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("PrivateIpList").
+		WithJsonTag("private_ip_list").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("HasIntrusion").
 		WithJsonTag("has_intrusion").
 		WithLocationType(def.Query))
@@ -11269,20 +11305,20 @@ func GenReqDefForListImageLocal() *def.HttpRequestDef {
 		WithJsonTag("enterprise_project_id").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
-		WithName("ImageName").
-		WithJsonTag("image_name").
-		WithLocationType(def.Query))
-	reqDefBuilder.WithRequestField(def.NewFieldDef().
-		WithName("ImageVersion").
-		WithJsonTag("image_version").
-		WithLocationType(def.Query))
-	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Offset").
 		WithJsonTag("offset").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Limit").
 		WithJsonTag("limit").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("ImageName").
+		WithJsonTag("image_name").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("ImageVersion").
+		WithJsonTag("image_version").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("ScanStatus").
@@ -14421,6 +14457,10 @@ func GenReqDefForListAntivirusHandleHistory() *def.HttpRequestDef {
 		WithJsonTag("severity_list").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Severities").
+		WithJsonTag("severities").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("HostName").
 		WithJsonTag("host_name").
 		WithLocationType(def.Query))
@@ -16233,6 +16273,10 @@ func GenReqDefForListVulHostHosts() *def.HttpRequestDef {
 		WithName("ClusterId").
 		WithJsonTag("cluster_id").
 		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("HostIdList").
+		WithJsonTag("host_id_list").
+		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
 	return requestDef
@@ -16373,6 +16417,10 @@ func GenReqDefForListVulHostVuls() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("RepairPriority").
 		WithJsonTag("repair_priority").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("HostIdList").
+		WithJsonTag("host_id_list").
 		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()

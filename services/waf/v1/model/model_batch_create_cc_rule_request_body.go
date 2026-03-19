@@ -20,7 +20,7 @@ type BatchCreateCcRuleRequestBody struct {
 	// cc规则防护规则限速条件，当cc防护规则为高级模式（mode参数值为1）时，该参数必填。
 	Conditions []CcCondition `json:"conditions"`
 
-	Action *CreateCcRuleRequestBodyAction `json:"action"`
+	Action *BatchCreateCcRuleRequestBodyAction `json:"action"`
 
 	// **参数解释：** 限速模式标识，用于指定区分单个Web访问者的判断依据 **约束限制：** 不涉及 **取值范围：**  - ip：IP限速，根据IP区分单个Web访问者  - cookie：用户限速，根据Cookie键值区分单个Web访问者  - header：用户限速，根据Header区分单个Web访问者  - other：根据Referer（自定义请求访问的来源）字段区分单个Web访问者  - policy：策略限速  - domain：域名限速  - url：url限速 **默认取值：** 不涉及
 	TagType BatchCreateCcRuleRequestBodyTagType `json:"tag_type"`

@@ -18,7 +18,7 @@ type CreatePrepaidCloudWafRequestBody struct {
 	// 是否自动续订   -  true：自动续订   - false：不自动续订
 	IsAutoRenew bool `json:"is_auto_renew"`
 
-	// region Id
+	// **参数解释：** 局点ID **约束限制：** 华为云支持的局点ID **取值范围：** 不涉及 **默认取值：** 不涉及
 	RegionId string `json:"region_id"`
 
 	WafProductInfo *WafProductInfo `json:"waf_product_info,omitempty"`

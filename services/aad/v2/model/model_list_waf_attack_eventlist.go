@@ -15,7 +15,7 @@ type ListWafAttackEventlist struct {
 	Domain *string `json:"domain,omitempty"`
 
 	// 攻击时间
-	Time *int32 `json:"time,omitempty"`
+	Time *int64 `json:"time,omitempty"`
 
 	// 攻击源IP
 	Sip *string `json:"sip,omitempty"`

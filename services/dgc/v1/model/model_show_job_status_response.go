@@ -11,19 +11,30 @@ import (
 
 // ShowJobStatusResponse Response Object
 type ShowJobStatusResponse struct {
+
+	// 作业名称。
 	Name *string `json:"name,omitempty"`
 
+	// 作业状态： - STARTING：启动中 - NORMAL：正常 - EXCEPTION：异常 - STOPPING： 停止中 - STOPPED：停止 - PAUSE: 暂停 - ABNORMAL: 运行异常/失败 - DISABLE: 节点禁用 - OVERLOAD: 繁忙 - INIT: 初始化
 	Status *ShowJobStatusResponseStatus `json:"status,omitempty"`
 
+	// 开始时间。
 	Starttime *string `json:"starttime,omitempty"`
 
+	// 结束时间。
 	EndTime *string `json:"endTime,omitempty"`
 
-	// 状态最后更新时间
+	// 状态最后更新时间。
 	LastUpdateTime *string `json:"lastUpdateTime,omitempty"`
 
-	Nodes          *[]RealTimeNodeStatus `json:"nodes,omitempty"`
-	HttpStatusCode int                   `json:"-"`
+	Nodes *[]RealTimeNodeStatus `json:"nodes,omitempty"`
+
+	// 创建人。
+	CreateUser *string `json:"createUser,omitempty"`
+
+	// 最后修改人。
+	LastModifiyUser *string `json:"lastModifiyUser,omitempty"`
+	HttpStatusCode  int     `json:"-"`
 }
 
 func (o ShowJobStatusResponse) String() string {
@@ -40,17 +51,22 @@ type ShowJobStatusResponseStatus struct {
 }
 
 type ShowJobStatusResponseStatusEnum struct {
-	STARTTING ShowJobStatusResponseStatus
+	STARTING  ShowJobStatusResponseStatus
 	NORMAL    ShowJobStatusResponseStatus
 	EXCEPTION ShowJobStatusResponseStatus
 	STOPPING  ShowJobStatusResponseStatus
 	STOPPED   ShowJobStatusResponseStatus
+	PAUSE     ShowJobStatusResponseStatus
+	ABNORMAL  ShowJobStatusResponseStatus
+	DISABLE   ShowJobStatusResponseStatus
+	OVERLOAD  ShowJobStatusResponseStatus
+	INIT      ShowJobStatusResponseStatus
 }
 
 func GetShowJobStatusResponseStatusEnum() ShowJobStatusResponseStatusEnum {
 	return ShowJobStatusResponseStatusEnum{
-		STARTTING: ShowJobStatusResponseStatus{
-			value: "STARTTING",
+		STARTING: ShowJobStatusResponseStatus{
+			value: "STARTING",
 		},
 		NORMAL: ShowJobStatusResponseStatus{
 			value: "NORMAL",
@@ -63,6 +79,21 @@ func GetShowJobStatusResponseStatusEnum() ShowJobStatusResponseStatusEnum {
 		},
 		STOPPED: ShowJobStatusResponseStatus{
 			value: "STOPPED",
+		},
+		PAUSE: ShowJobStatusResponseStatus{
+			value: "PAUSE",
+		},
+		ABNORMAL: ShowJobStatusResponseStatus{
+			value: "ABNORMAL",
+		},
+		DISABLE: ShowJobStatusResponseStatus{
+			value: "DISABLE",
+		},
+		OVERLOAD: ShowJobStatusResponseStatus{
+			value: "OVERLOAD",
+		},
+		INIT: ShowJobStatusResponseStatus{
+			value: "INIT",
 		},
 	}
 }

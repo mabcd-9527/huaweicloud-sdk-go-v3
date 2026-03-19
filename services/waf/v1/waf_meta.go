@@ -111,12 +111,12 @@ func GenReqDefForBatchCreateCustomRule() *def.HttpRequestDef {
 		WithContentType("application/json")
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
-		WithName("Policyids").
-		WithJsonTag("policyids").
-		WithLocationType(def.Query))
-	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("EnterpriseProjectId").
 		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Policyids").
+		WithJsonTag("policyids").
 		WithLocationType(def.Query))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
@@ -336,6 +336,11 @@ func GenReqDefForBatchUpdateAntileakageRules() *def.HttpRequestDef {
 		WithContentType("application/json")
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
 		WithLocationType(def.Body))
 
@@ -349,6 +354,11 @@ func GenReqDefForBatchUpdateAntitamperRules() *def.HttpRequestDef {
 		WithPath("/v1/{project_id}/waf/rule/antitamper/batch-update").
 		WithResponse(new(model.BatchUpdateAntitamperRulesResponse)).
 		WithContentType("application/json")
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
@@ -366,6 +376,11 @@ func GenReqDefForBatchUpdateCcRules() *def.HttpRequestDef {
 		WithContentType("application/json")
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
 		WithLocationType(def.Body))
 
@@ -381,6 +396,11 @@ func GenReqDefForBatchUpdateCustomRules() *def.HttpRequestDef {
 		WithContentType("application/json")
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
 		WithLocationType(def.Body))
 
@@ -394,6 +414,11 @@ func GenReqDefForBatchUpdateGeoipRules() *def.HttpRequestDef {
 		WithPath("/v1/{project_id}/waf/rule/geoip/batch-update").
 		WithResponse(new(model.BatchUpdateGeoipRulesResponse)).
 		WithContentType("application/json")
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
@@ -454,6 +479,11 @@ func GenReqDefForBatchUpdateWhiteblackipRules() *def.HttpRequestDef {
 		WithPath("/v1/{project_id}/waf/rule/whiteblackip/batch-update").
 		WithResponse(new(model.BatchUpdateWhiteblackipRulesResponse)).
 		WithContentType("application/json")
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
@@ -562,6 +592,10 @@ func GenReqDefForConfirmPolicyAntileakageMap() *def.HttpRequestDef {
 		WithResponse(new(model.ConfirmPolicyAntileakageMapResponse)).
 		WithContentType("application/json")
 
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Lang").
 		WithJsonTag("lang").
@@ -1774,6 +1808,14 @@ func GenReqDefForListAnticrawlerRules() *def.HttpRequestDef {
 		WithJsonTag("limit").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Page").
+		WithJsonTag("page").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Pagesize").
+		WithJsonTag("pagesize").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Type").
 		WithJsonTag("type").
 		WithLocationType(def.Query))
@@ -1833,6 +1875,14 @@ func GenReqDefForListAntileakageRules() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Limit").
 		WithJsonTag("limit").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Page").
+		WithJsonTag("page").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Pagesize").
+		WithJsonTag("pagesize").
 		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
@@ -1987,6 +2037,14 @@ func GenReqDefForListCcRules() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Limit").
 		WithJsonTag("limit").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Page").
+		WithJsonTag("page").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Pagesize").
+		WithJsonTag("pagesize").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Name").
@@ -2145,6 +2203,14 @@ func GenReqDefForListCustomRules() *def.HttpRequestDef {
 		WithName("Limit").
 		WithJsonTag("limit").
 		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Page").
+		WithJsonTag("page").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Pagesize").
+		WithJsonTag("pagesize").
+		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
 	return requestDef
@@ -2174,16 +2240,104 @@ func GenReqDefForListEvent() *def.HttpRequestDef {
 		WithJsonTag("to").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Ids").
+		WithJsonTag("ids").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Nids").
+		WithJsonTag("nids").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Attacks").
 		WithJsonTag("attacks").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Nattacks").
+		WithJsonTag("nattacks").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Rules").
+		WithJsonTag("rules").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Nrules").
+		WithJsonTag("nrules").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Sips").
+		WithJsonTag("sips").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Nsips").
+		WithJsonTag("nsips").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Sip").
+		WithJsonTag("sip").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Urls").
+		WithJsonTag("urls").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Nurls").
+		WithJsonTag("nurls").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Url").
+		WithJsonTag("url").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Actions").
+		WithJsonTag("actions").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Nactions").
+		WithJsonTag("nactions").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Domain").
+		WithJsonTag("domain").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Ndomain").
+		WithJsonTag("ndomain").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Domains").
+		WithJsonTag("domains").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("IpCountries").
+		WithJsonTag("ip_countries").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("NipCountries").
+		WithJsonTag("nip_countries").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("IpRegions").
+		WithJsonTag("ip_regions").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("NipRegions").
+		WithJsonTag("nip_regions").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("ResponseCodes").
+		WithJsonTag("response_codes").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Payload").
+		WithJsonTag("payload").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Hosts").
 		WithJsonTag("hosts").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
-		WithName("Sips").
-		WithJsonTag("sips").
+		WithName("Instances").
+		WithJsonTag("instances").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Page").
@@ -2192,6 +2346,18 @@ func GenReqDefForListEvent() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Pagesize").
 		WithJsonTag("pagesize").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("SortKey").
+		WithJsonTag("sort_key").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("SortDirection").
+		WithJsonTag("sort_direction").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("QueryMode").
+		WithJsonTag("query_mode").
 		WithLocationType(def.Query))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
@@ -2231,12 +2397,12 @@ func GenReqDefForListGeoIpPolicyRules() *def.HttpRequestDef {
 		WithContentType("application/json")
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
-		WithName("Policyids").
-		WithJsonTag("policyids").
-		WithLocationType(def.Query))
-	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("EnterpriseProjectId").
 		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Policyids").
+		WithJsonTag("policyids").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Page").
@@ -2421,10 +2587,14 @@ func GenReqDefForListInstance() *def.HttpRequestDef {
 func GenReqDefForListInstanceTags() *def.HttpRequestDef {
 	reqDefBuilder := def.NewHttpRequestDefBuilder().
 		WithMethod(http.MethodGet).
-		WithPath("/v1/{project_id}/waf/{resourceid}/tags").
+		WithPath("/v1/{project_id}/waf/{resource_type}/{resourceid}/tags").
 		WithResponse(new(model.ListInstanceTagsResponse)).
 		WithContentType("application/json")
 
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("ResourceType").
+		WithJsonTag("resource_type").
+		WithLocationType(def.Path))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Resourceid").
 		WithJsonTag("resourceid").
@@ -2522,6 +2692,14 @@ func GenReqDefForListIpReputationRules() *def.HttpRequestDef {
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Limit").
 		WithJsonTag("limit").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Page").
+		WithJsonTag("page").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Pagesize").
+		WithJsonTag("pagesize").
 		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
@@ -2756,6 +2934,14 @@ func GenReqDefForListPunishmentRules() *def.HttpRequestDef {
 		WithName("Limit").
 		WithJsonTag("limit").
 		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Page").
+		WithJsonTag("page").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Pagesize").
+		WithJsonTag("pagesize").
+		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
 	return requestDef
@@ -2985,8 +3171,24 @@ func GenReqDefForListSourceIpTop5() *def.HttpRequestDef {
 		WithJsonTag("recent").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("From").
+		WithJsonTag("from").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("To").
+		WithJsonTag("to").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Top").
+		WithJsonTag("top").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Hosts").
 		WithJsonTag("hosts").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Instances").
+		WithJsonTag("instances").
 		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
@@ -3041,8 +3243,20 @@ func GenReqDefForListThreats() *def.HttpRequestDef {
 		WithJsonTag("recent").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("From").
+		WithJsonTag("from").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("To").
+		WithJsonTag("to").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Hosts").
 		WithJsonTag("hosts").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Instances").
+		WithJsonTag("instances").
 		WithLocationType(def.Query))
 
 	requestDef := reqDefBuilder.Build()
@@ -3576,6 +3790,11 @@ func GenReqDefForShowConsoleConfig() *def.HttpRequestDef {
 		WithPath("/v1/{project_id}/waf/config/console").
 		WithResponse(new(model.ShowConsoleConfigResponse)).
 		WithContentType("application/json")
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("Region").
+		WithJsonTag("region").
+		WithLocationType(def.Header))
 
 	requestDef := reqDefBuilder.Build()
 	return requestDef
@@ -4354,6 +4573,31 @@ func GenReqDefForUpdateIgnoreRule() *def.HttpRequestDef {
 	return requestDef
 }
 
+func GenReqDefForUpdateIgnoreRuleHitNum() *def.HttpRequestDef {
+	reqDefBuilder := def.NewHttpRequestDefBuilder().
+		WithMethod(http.MethodPost).
+		WithPath("/v1/{project_id}/waf/policy/{policy_id}/ignore/{rule_id}/recount").
+		WithResponse(new(model.UpdateIgnoreRuleHitNumResponse)).
+		WithContentType("application/json")
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("PolicyId").
+		WithJsonTag("policy_id").
+		WithLocationType(def.Path))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("RuleId").
+		WithJsonTag("rule_id").
+		WithLocationType(def.Path))
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
+
+	requestDef := reqDefBuilder.Build()
+	return requestDef
+}
+
 func GenReqDefForUpdateInstanceRoute() *def.HttpRequestDef {
 	reqDefBuilder := def.NewHttpRequestDefBuilder().
 		WithMethod(http.MethodPut).
@@ -4582,6 +4826,11 @@ func GenReqDefForUpdatePremiumHostAccessStatus() *def.HttpRequestDef {
 		WithLocationType(def.Path))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
 		WithLocationType(def.Body))
 
@@ -4645,6 +4894,11 @@ func GenReqDefForUpdatePremiumInstanceProgress() *def.HttpRequestDef {
 		WithName("HostId").
 		WithJsonTag("host_id").
 		WithLocationType(def.Path))
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Body").
@@ -4838,6 +5092,11 @@ func GenReqDefForShowWebProtectionRule() *def.HttpRequestDef {
 		WithName("RuleId").
 		WithJsonTag("rule_id").
 		WithLocationType(def.Path))
+
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("EnterpriseProjectId").
+		WithJsonTag("enterprise_project_id").
+		WithLocationType(def.Query))
 
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("XLanguage").

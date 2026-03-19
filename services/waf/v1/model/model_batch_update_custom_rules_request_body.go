@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-type BatchUpdateCustomRuleRequestBody struct {
+type BatchUpdateCustomRulesRequestBody struct {
 
 	// 规则名称
 	Name *string `json:"name,omitempty"`
@@ -28,7 +28,7 @@ type BatchUpdateCustomRuleRequestBody struct {
 	// 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：0到65535。
 	Priority *int32 `json:"priority,omitempty"`
 
-	// 精准防护规则生效时间:  - “false”：表示该规则立即生效。   - “true”：表示自定义生效时间。
+	// 精准防护规则生效时间:  - false：表示该规则立即生效 - true：表示自定义生效时间
 	Time *bool `json:"time,omitempty"`
 
 	// 精准防护规则生效的起始时间戳（秒）。当time=true，才会返回该参数。
@@ -41,14 +41,14 @@ type BatchUpdateCustomRuleRequestBody struct {
 	Producer *int32 `json:"producer,omitempty"`
 
 	// **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
-	PolicyRuleIds []PolicyRuleIdRequestBodyPolicyRuleIds `json:"policy_rule_ids"`
+	PolicyRuleIds []BatchUpdateCustomRulesRequestBodyPolicyRuleIds `json:"policy_rule_ids"`
 }
 
-func (o BatchUpdateCustomRuleRequestBody) String() string {
+func (o BatchUpdateCustomRulesRequestBody) String() string {
 	data, err := utils.Marshal(o)
 	if err != nil {
-		return "BatchUpdateCustomRuleRequestBody struct{}"
+		return "BatchUpdateCustomRulesRequestBody struct{}"
 	}
 
-	return strings.Join([]string{"BatchUpdateCustomRuleRequestBody", string(data)}, " ")
+	return strings.Join([]string{"BatchUpdateCustomRulesRequestBody", string(data)}, " ")
 }

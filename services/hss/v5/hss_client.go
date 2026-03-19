@@ -5122,9 +5122,9 @@ func (c *HssClient) ListRiskConfigsInvoker(request *model.ListRiskConfigsRequest
 	return &ListRiskConfigsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
-// ListSecurityCheckPolicyGroup 查询配置检测策略组列表10
+// ListSecurityCheckPolicyGroup 查询配置检测策略组列表
 //
-// 查询配置检测策略组列表10。
+// 查询配置检测策略组列表。
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *HssClient) ListSecurityCheckPolicyGroup(request *model.ListSecurityCheckPolicyGroupRequest) (*model.ListSecurityCheckPolicyGroupResponse, error) {
@@ -5137,7 +5137,7 @@ func (c *HssClient) ListSecurityCheckPolicyGroup(request *model.ListSecurityChec
 	}
 }
 
-// ListSecurityCheckPolicyGroupInvoker 查询配置检测策略组列表10
+// ListSecurityCheckPolicyGroupInvoker 查询配置检测策略组列表
 func (c *HssClient) ListSecurityCheckPolicyGroupInvoker(request *model.ListSecurityCheckPolicyGroupRequest) *ListSecurityCheckPolicyGroupInvoker {
 	requestDef := GenReqDefForListSecurityCheckPolicyGroup()
 	return &ListSecurityCheckPolicyGroupInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
@@ -6550,9 +6550,9 @@ func (c *HssClient) ChangeHostsGroupInvoker(request *model.ChangeHostsGroupReque
 	return &ChangeHostsGroupInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
-// CreateVpcEndpoint 创建VPC终端节点的创建
+// CreateVpcEndpoint 创建VPC终端节点
 //
-// 创建VPC终端节点的创建。
+// 创建VPC终端节点。
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *HssClient) CreateVpcEndpoint(request *model.CreateVpcEndpointRequest) (*model.CreateVpcEndpointResponse, error) {
@@ -6565,7 +6565,7 @@ func (c *HssClient) CreateVpcEndpoint(request *model.CreateVpcEndpointRequest) (
 	}
 }
 
-// CreateVpcEndpointInvoker 创建VPC终端节点的创建
+// CreateVpcEndpointInvoker 创建VPC终端节点
 func (c *HssClient) CreateVpcEndpointInvoker(request *model.CreateVpcEndpointRequest) *CreateVpcEndpointInvoker {
 	requestDef := GenReqDefForCreateVpcEndpoint()
 	return &CreateVpcEndpointInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
@@ -7476,7 +7476,7 @@ func (c *HssClient) ListImageHandleAffectVulnerabilitiesInvoker(request *model.L
 
 // ListImageLocal 本地镜像列表查询
 //
-// 本地镜像列表查询。
+// 本地镜像列表查询
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *HssClient) ListImageLocal(request *model.ListImageLocalRequest) (*model.ListImageLocalResponse, error) {
@@ -9574,9 +9574,9 @@ func (c *HssClient) UpdateSecurityCheckConfigInvoker(request *model.UpdateSecuri
 	return &UpdateSecurityCheckConfigInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
-// ListServerlessAsset 查询Serverless资产列表
+// ListServerlessAsset 查询Serverless资产列表--接口已废弃
 //
-// 查询Serverless资产列表。
+// 查询Serverless资产列表--接口已废弃
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *HssClient) ListServerlessAsset(request *model.ListServerlessAssetRequest) (*model.ListServerlessAssetResponse, error) {
@@ -9589,15 +9589,15 @@ func (c *HssClient) ListServerlessAsset(request *model.ListServerlessAssetReques
 	}
 }
 
-// ListServerlessAssetInvoker 查询Serverless资产列表
+// ListServerlessAssetInvoker 查询Serverless资产列表--接口已废弃
 func (c *HssClient) ListServerlessAssetInvoker(request *model.ListServerlessAssetRequest) *ListServerlessAssetInvoker {
 	requestDef := GenReqDefForListServerlessAsset()
 	return &ListServerlessAssetInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
-// ListServerlessAssetDetail 查询Serverless资产详细信息
+// ListServerlessAssetDetail 查询Serverless资产详细信息--接口已废弃
 //
-// 查询Serverless资产详细信息。
+// 查询Serverless资产详细信息--接口已废弃
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *HssClient) ListServerlessAssetDetail(request *model.ListServerlessAssetDetailRequest) (*model.ListServerlessAssetDetailResponse, error) {
@@ -9610,7 +9610,7 @@ func (c *HssClient) ListServerlessAssetDetail(request *model.ListServerlessAsset
 	}
 }
 
-// ListServerlessAssetDetailInvoker 查询Serverless资产详细信息
+// ListServerlessAssetDetailInvoker 查询Serverless资产详细信息--接口已废弃
 func (c *HssClient) ListServerlessAssetDetailInvoker(request *model.ListServerlessAssetDetailRequest) *ListServerlessAssetDetailInvoker {
 	requestDef := GenReqDefForListServerlessAssetDetail()
 	return &ListServerlessAssetDetailInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}

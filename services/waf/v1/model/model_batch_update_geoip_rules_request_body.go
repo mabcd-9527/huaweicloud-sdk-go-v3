@@ -10,9 +10,9 @@ import (
 type BatchUpdateGeoipRulesRequestBody struct {
 
 	// **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
-	PolicyRuleIds *[]PolicyRuleIdRequestBodyPolicyRuleIds `json:"policy_rule_ids,omitempty"`
+	PolicyRuleIds []PolicyRuleIdRequestBodyPolicyRuleIds `json:"policy_rule_ids"`
 
-	// **参数解释：** 规则状态，控制地理位置访问控制规则的启用/禁用（如1表示启用，0表示禁用） **约束限制：** 不涉及 **取值范围：** - 0 - 1  **默认取值：** 不涉及
+	// **参数解释：** 规则状态，控制地理位置访问控制规则的启用/禁用（如1表示启用，0表示禁用） **约束限制：** 不涉及 **取值范围：** - 0 - 1 **默认取值：** 不涉及
 	Status *int32 `json:"status,omitempty"`
 
 	// **参数解释：** 规则名称，标识地理位置访问控制规则的名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及

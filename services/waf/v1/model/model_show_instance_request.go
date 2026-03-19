@@ -12,7 +12,7 @@ type ShowInstanceRequest struct {
 	// 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。
 	EnterpriseProjectId *string `json:"enterprise_project_id,omitempty"`
 
-	// 独享引擎ID（通过调用WAF的ListInstance接口获取所有独享引擎信息查询独享引擎ID）
+	// **参数解释：** 独享引擎ID（通过调用WAF的ListInstance接口获取所有独享引擎信息查询独享引擎ID） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	InstanceId string `json:"instance_id"`
 }
 

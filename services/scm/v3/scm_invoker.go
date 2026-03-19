@@ -117,6 +117,38 @@ func (i *DeployCertificateInvoker) Invoke() (*model.DeployCertificateResponse, e
 	}
 }
 
+type DisableNotificationInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DisableNotificationInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DisableNotificationInvoker) Invoke() (*model.DisableNotificationResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DisableNotificationResponse), nil
+	}
+}
+
+type EnableNotificationInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *EnableNotificationInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *EnableNotificationInvoker) Invoke() (*model.EnableNotificationResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.EnableNotificationResponse), nil
+	}
+}
+
 type ExportCertificateInvoker struct {
 	*invoker.BaseInvoker
 }

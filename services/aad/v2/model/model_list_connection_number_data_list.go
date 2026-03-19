@@ -9,7 +9,7 @@ import (
 type ListConnectionNumberDataList struct {
 
 	// 时间戳毫秒值
-	Time *int32 `json:"time,omitempty"`
+	Time *int64 `json:"time,omitempty"`
 
 	// 连接数
 	Value *int32 `json:"value,omitempty"`

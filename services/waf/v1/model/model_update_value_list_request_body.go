@@ -12,10 +12,10 @@ import (
 // UpdateValueListRequestBody 创建或更新引用表
 type UpdateValueListRequestBody struct {
 
-	// 引用表名称，2-32位字符串组成
+	// **参数解释：** 引用表名称，只能由数字、字母、中划线、下划线和英文句点组成 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
 	Name string `json:"name"`
 
-	// **参数解释：** 引用表类型 **约束限制：** 不涉及 **取值范围：**  - url  - params  - ip  - cookie  - referer  - user-agent  - header  - response_code  - response_header  - response_body  **默认取值：** 不涉及
+	// **参数解释：** 引用表类型 **约束限制：** 不支持修改 **取值范围：**  - url  - params  - ip  - cookie  - referer  - user-agent  - header  - response_code  - response_header  - response_body **默认取值：** 不涉及
 	Type UpdateValueListRequestBodyType `json:"type"`
 
 	// 引用表的值

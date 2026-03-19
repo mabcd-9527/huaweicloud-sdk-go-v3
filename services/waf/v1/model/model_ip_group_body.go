@@ -18,6 +18,9 @@ type IpGroupBody struct {
 	// 地址组ip（以逗号分隔的ip或ip段）
 	Ips *string `json:"ips,omitempty"`
 
+	// ip或ip段的备注
+	IpRemarks map[string]string `json:"ip_remarks,omitempty"`
+
 	// 地址组长度
 	Size *int32 `json:"size,omitempty"`
 

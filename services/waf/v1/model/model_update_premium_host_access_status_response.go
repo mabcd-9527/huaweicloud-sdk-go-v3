@@ -9,7 +9,7 @@ import (
 // UpdatePremiumHostAccessStatusResponse Response Object
 type UpdatePremiumHostAccessStatusResponse struct {
 
-	// **参数解释：** 域名接入状态 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+	// **参数解释：** 域名接入状态 **约束限制：** 不涉及 **取值范围：** - 0 关闭 - 1 开启 **默认取值：** 不涉及
 	AccessStatus   *int32 `json:"access_status,omitempty"`
 	HttpStatusCode int    `json:"-"`
 }

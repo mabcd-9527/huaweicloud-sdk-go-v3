@@ -11,7 +11,7 @@ type UpdateCustomRuleRequestBody struct {
 	// 规则名称
 	Name string `json:"name"`
 
-	// 精准防护规则生效时间:  - “false”：表示该规则立即生效。   - “true”：表示自定义生效时间。
+	// 精准防护规则生效时间:  - false：表示该规则立即生效 - true：表示自定义生效时间
 	Time bool `json:"time"`
 
 	// 精准防护规则生效的起始时间戳（秒）。当time=true，才需要填写该参数。

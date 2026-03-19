@@ -15,7 +15,7 @@ type ShowJobInstanceResponse struct {
 	// 作业实例ID
 	InstanceId *int64 `json:"instanceId,omitempty"`
 
-	// 作业实例状态： - waiting：等待运行 - running：运行中 - success：运行成功 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
+	// 作业实例状态： - waiting：等待运行 - running：运行中 - success：运行成功 - forceSuccess：强制成功 - ignoreSuccess：忽略失败 - freeze：冻结 - skip-by-depend：跳过 - waiting-confirm：待确认执行 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
 	Status *string `json:"status,omitempty"`
 
 	// 作业实例计划执行时间

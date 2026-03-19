@@ -15,7 +15,7 @@ type Curve struct {
 	Out *float32 `json:"out,omitempty"`
 
 	// 时间戳
-	Time *int32 `json:"time,omitempty"`
+	Time *int64 `json:"time,omitempty"`
 }
 
 func (o Curve) String() string {

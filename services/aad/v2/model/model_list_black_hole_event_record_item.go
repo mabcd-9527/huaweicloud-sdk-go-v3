@@ -28,10 +28,10 @@ type ListBlackHoleEventRecordItem struct {
 	EventType string `json:"event_type"`
 
 	// 封堵开始时间
-	StartTime int32 `json:"start_time"`
+	StartTime int64 `json:"start_time"`
 
 	// 封堵结束时间
-	EndTime *int32 `json:"end_time,omitempty"`
+	EndTime *int64 `json:"end_time,omitempty"`
 }
 
 func (o ListBlackHoleEventRecordItem) String() string {

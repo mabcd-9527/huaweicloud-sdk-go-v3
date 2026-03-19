@@ -45,7 +45,7 @@ type CreateSqlLimitTaskRequestBody struct {
 	Databases *string `json:"databases,omitempty"`
 
 	// **参数解释**: CN节点信息列表 **约束限制**: 如果“limit_type”为SQL_ID，则“node_infos”必选。
-	NodeInfos *[]CreateLimitTaskNodeOption `json:"node_infos,omitempty"`
+	NodeInfos *[]CreateSqlLimitTaskNodeOption `json:"node_infos,omitempty"`
 }
 
 func (o CreateSqlLimitTaskRequestBody) String() string {

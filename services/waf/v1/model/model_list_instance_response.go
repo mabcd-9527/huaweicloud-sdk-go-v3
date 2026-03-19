@@ -16,8 +16,8 @@ type ListInstanceResponse struct {
 	Purchased *bool `json:"purchased,omitempty"`
 
 	// 详细的独享引擎信息列表
-	Items          *[]ListInstance `json:"items,omitempty"`
-	HttpStatusCode int             `json:"-"`
+	Items          *[]Instance `json:"items,omitempty"`
+	HttpStatusCode int         `json:"-"`
 }
 
 func (o ListInstanceResponse) String() string {

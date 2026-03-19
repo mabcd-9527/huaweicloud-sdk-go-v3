@@ -33,8 +33,8 @@ type ConfirmIpReputationRuleResponse struct {
 	// **参数解释：** 规则关联的标签列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	Tags *[]string `json:"tags,omitempty"`
 
-	Action         *CreateIpReputationRuleResponseBodyAction `json:"action,omitempty"`
-	HttpStatusCode int                                       `json:"-"`
+	Action         *UpdateIdcIpRuleResponseBodyAction `json:"action,omitempty"`
+	HttpStatusCode int                                `json:"-"`
 }
 
 func (o ConfirmIpReputationRuleResponse) String() string {

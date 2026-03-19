@@ -166,6 +166,48 @@ func (c *ScmClient) DeployCertificateInvoker(request *model.DeployCertificateReq
 	return &DeployCertificateInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// DisableNotification 禁用证书提醒
+//
+// 禁用证书提醒。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *ScmClient) DisableNotification(request *model.DisableNotificationRequest) (*model.DisableNotificationResponse, error) {
+	requestDef := GenReqDefForDisableNotification()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.DisableNotificationResponse), nil
+	}
+}
+
+// DisableNotificationInvoker 禁用证书提醒
+func (c *ScmClient) DisableNotificationInvoker(request *model.DisableNotificationRequest) *DisableNotificationInvoker {
+	requestDef := GenReqDefForDisableNotification()
+	return &DisableNotificationInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// EnableNotification 启用证书提醒
+//
+// 启用证书提醒。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *ScmClient) EnableNotification(request *model.EnableNotificationRequest) (*model.EnableNotificationResponse, error) {
+	requestDef := GenReqDefForEnableNotification()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.EnableNotificationResponse), nil
+	}
+}
+
+// EnableNotificationInvoker 启用证书提醒
+func (c *ScmClient) EnableNotificationInvoker(request *model.EnableNotificationRequest) *EnableNotificationInvoker {
+	requestDef := GenReqDefForEnableNotification()
+	return &EnableNotificationInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ExportCertificate 导出证书
 //
 // 导出证书。

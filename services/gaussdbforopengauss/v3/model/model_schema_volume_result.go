@@ -18,7 +18,7 @@ type SchemaVolumeResult struct {
 	UserName *string `json:"user_name,omitempty"`
 
 	// **参数解释**: schema名称空间的名称。 **取值范围**: 不涉及。
-	NspName *string `json:"nsp_name,omitempty"`
+	SchemaName *string `json:"schema_name,omitempty"`
 }
 
 func (o SchemaVolumeResult) String() string {

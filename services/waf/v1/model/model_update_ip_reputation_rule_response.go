@@ -15,13 +15,13 @@ type UpdateIpReputationRuleResponse struct {
 	// **参数解释：** 所属防护策略ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	Policyid *string `json:"policyid,omitempty"`
 
-	// **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+	// **参数解释：** 规则名称 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
 	Name *string `json:"name,omitempty"`
 
 	// **参数解释：** 规则类型（如idc表示机房IP情报类型） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	Type *string `json:"type,omitempty"`
 
-	// **参数解释：** 标签列表，用于指定关联的情报标识 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+	// **参数解释：** 标签列表，用于指定关联的情报标识，可通过ConfirmPolicyIpReputationMap接口查询；多个标识之间使用逗号\",\"分隔 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	Tags *[]string `json:"tags,omitempty"`
 
 	// **参数解释：** 所属策略名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
@@ -36,7 +36,7 @@ type UpdateIpReputationRuleResponse struct {
 	// **参数解释：** 规则状态（1表示开启，0表示关闭） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	Status *int32 `json:"status,omitempty"`
 
-	Action *CreateIpReputationRuleResponseBodyAction `json:"action,omitempty"`
+	Action *UpdateIdcIpRuleResponseBodyAction `json:"action,omitempty"`
 
 	// **参数解释：** 互联网服务提供商信息 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	Isp            *string `json:"isp,omitempty"`

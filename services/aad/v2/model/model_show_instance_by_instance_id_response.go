@@ -19,13 +19,13 @@ type ShowInstanceByInstanceIdResponse struct {
 	Version *string `json:"version,omitempty"`
 
 	// 过期时间
-	ExpireTime *int32 `json:"expire_time,omitempty"`
+	ExpireTime *int64 `json:"expire_time,omitempty"`
 
 	// 创建时间
-	CreateTime *int32 `json:"create_time,omitempty"`
+	CreateTime *int64 `json:"create_time,omitempty"`
 
 	// 当前时间
-	CurrentTime *int32 `json:"current_time,omitempty"`
+	CurrentTime *int64 `json:"current_time,omitempty"`
 
 	ProductSpecData *ProductSpecData `json:"product_spec_data,omitempty"`
 

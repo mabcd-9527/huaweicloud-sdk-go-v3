@@ -2821,6 +2821,22 @@ func (i *UpdateIgnoreRuleInvoker) Invoke() (*model.UpdateIgnoreRuleResponse, err
 	}
 }
 
+type UpdateIgnoreRuleHitNumInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *UpdateIgnoreRuleHitNumInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *UpdateIgnoreRuleHitNumInvoker) Invoke() (*model.UpdateIgnoreRuleHitNumResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.UpdateIgnoreRuleHitNumResponse), nil
+	}
+}
+
 type UpdateInstanceRouteInvoker struct {
 	*invoker.BaseInvoker
 }

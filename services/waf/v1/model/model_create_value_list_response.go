@@ -18,7 +18,7 @@ type CreateValueListResponse struct {
 	// 引用表名称
 	Name *string `json:"name,omitempty"`
 
-	// **参数解释：** 引用表类型 **约束限制：** 不涉及 **取值范围：**  - url  - params  - ip  - cookie  - referer  - user-agent  - header  - response_code  - response_header  - response_body  **默认取值：** 不涉及
+	// **参数解释：** 引用表类型 **约束限制：** 不涉及 **取值范围：**  - url  - params  - ip  - cookie  - referer  - user-agent  - header  - response_code  - response_header  - response_body **默认取值：** 不涉及
 	Type *CreateValueListResponseType `json:"type,omitempty"`
 
 	// 引用表描述

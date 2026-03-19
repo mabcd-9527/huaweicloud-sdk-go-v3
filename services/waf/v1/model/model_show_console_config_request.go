@@ -8,6 +8,9 @@ import (
 
 // ShowConsoleConfigRequest Request Object
 type ShowConsoleConfigRequest struct {
+
+	// **参数解释：** 局点ID，未携带时仅查询基础数据 **约束限制：** 华为云支持的局点ID **取值范围：** 不涉及 **默认取值：** 不涉及
+	Region *string `json:"region,omitempty"`
 }
 
 func (o ShowConsoleConfigRequest) String() string {

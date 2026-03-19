@@ -53,6 +53,9 @@ type ListVulHostVulsRequest struct {
 
 	// **参数解释**: 漏洞修复优先级 **约束限制**: 不涉及 **取值范围**: - Critical：紧急 - High：高 - Medium：中 - Low：低 **默认取值**: 不涉及
 	RepairPriority *string `json:"repair_priority,omitempty"`
+
+	// **参数解释**: 主机id列表，多个主机id用英文逗号分隔 **约束限制**: 不涉及 **取值范围**: 字符长度0-1850位 **默认取值**: 不涉及
+	HostIdList *string `json:"host_id_list,omitempty"`
 }
 
 func (o ListVulHostVulsRequest) String() string {

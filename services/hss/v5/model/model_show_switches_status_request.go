@@ -37,6 +37,7 @@ type ShowSwitchesStatusRequestCodeEnum struct {
 	IMAGE_PAY_PER_SCAN         ShowSwitchesStatusRequestCode
 	IMAGE_POPUP                ShowSwitchesStatusRequestCode
 	IMAGE_FREE_TO_PAY_POPUP    ShowSwitchesStatusRequestCode
+	DISPLAY_UNPROTECTED_HOST   ShowSwitchesStatusRequestCode
 }
 
 func GetShowSwitchesStatusRequestCodeEnum() ShowSwitchesStatusRequestCodeEnum {
@@ -52,6 +53,9 @@ func GetShowSwitchesStatusRequestCodeEnum() ShowSwitchesStatusRequestCodeEnum {
 		},
 		IMAGE_FREE_TO_PAY_POPUP: ShowSwitchesStatusRequestCode{
 			value: "image_free_to_pay_popup",
+		},
+		DISPLAY_UNPROTECTED_HOST: ShowSwitchesStatusRequestCode{
+			value: "display_unprotected_host",
 		},
 	}
 }

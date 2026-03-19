@@ -24,7 +24,7 @@ type ShowPrivacyRuleResponse struct {
 	// 规则状态，0：关闭，1：开启
 	Status *int32 `json:"status,omitempty"`
 
-	// 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
+	// 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/\\*,以\"\\*\"号结尾代表路径前缀
 	Url *string `json:"url,omitempty"`
 
 	// 屏蔽字段   - Params：请求参数   - Cookie：根据Cookie区分的Web访问者   - Header：自定义HTTP首部   - Form：表单参数

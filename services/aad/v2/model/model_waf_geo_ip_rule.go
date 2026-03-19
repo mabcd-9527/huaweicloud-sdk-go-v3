@@ -21,7 +21,7 @@ type WafGeoIpRule struct {
 	OverseasType *int32 `json:"overseas_type,omitempty"`
 
 	// 添加时间
-	Timestamp *int32 `json:"timestamp,omitempty"`
+	Timestamp *int64 `json:"timestamp,omitempty"`
 
 	// 防护动作 0-阻断，1-放行，2-仅记录
 	White *int32 `json:"white,omitempty"`

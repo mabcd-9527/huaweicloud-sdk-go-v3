@@ -24,7 +24,7 @@ type UpdateAnticrawlerRuleResponse struct {
 	// 规则名称
 	Name *string `json:"name,omitempty"`
 
-	// **参数解释：** JS脚本反爬虫规则类型 **约束限制：** 不涉及 **取值范围：**  - anticrawler_except_url: 防护所有路径模式，在该模式下，查询的JS脚本反爬虫规则为排除的防护路径规则  - anticrawler_specific_url: 防护指定路径模式，在该模式下，查询的JS脚本反爬虫规则为指定要防护的路径规则  **默认取值：** anticrawler_except_url
+	// **参数解释：** JS脚本反爬虫规则类型 **约束限制：** 不涉及 **取值范围：**  - anticrawler_except_url: 防护所有路径模式，在该模式下，查询的JS脚本反爬虫规则为排除的防护路径规则  - anticrawler_specific_url: 防护指定路径模式，在该模式下，查询的JS脚本反爬虫规则为指定要防护的路径规则 **默认取值：** anticrawler_except_url
 	Type *UpdateAnticrawlerRuleResponseType `json:"type,omitempty"`
 
 	// 创建规则时间戳

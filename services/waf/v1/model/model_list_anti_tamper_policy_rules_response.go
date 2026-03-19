@@ -9,12 +9,12 @@ import (
 // ListAntiTamperPolicyRulesResponse Response Object
 type ListAntiTamperPolicyRulesResponse struct {
 
-	// 防泄露规则数量
+	// 网页防篡改规则总条数
 	Total *int32 `json:"total,omitempty"`
 
-	// 防泄露规则列表
-	Items          *[]LeakageListInfo `json:"items,omitempty"`
-	HttpStatusCode int                `json:"-"`
+	// 网页防篡改规则数组
+	Items          *[]AntiTamperRuleResponseBody `json:"items,omitempty"`
+	HttpStatusCode int                           `json:"-"`
 }
 
 func (o ListAntiTamperPolicyRulesResponse) String() string {

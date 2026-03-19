@@ -9,7 +9,7 @@ import (
 type Point struct {
 
 	// 时间戳
-	Time *int32 `json:"time,omitempty"`
+	Time *int64 `json:"time,omitempty"`
 
 	// 请求总量
 	Total *int32 `json:"total,omitempty"`

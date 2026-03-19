@@ -43,8 +43,17 @@ type ListThreatsResponse struct {
 	Antileakage *int32 `json:"antileakage,omitempty"`
 
 	// 时间区间内防篡改数量
-	Antitamper     *int32 `json:"antitamper,omitempty"`
-	HttpStatusCode int    `json:"-"`
+	Antitamper *int32 `json:"antitamper,omitempty"`
+
+	// 时间区间内大模型提示词注入攻击数量
+	LlmPromptInjection *int32 `json:"llm_prompt_injection,omitempty"`
+
+	// 时间区间内大模型提示词合规检测数量
+	LlmPromptSensitive *int32 `json:"llm_prompt_sensitive,omitempty"`
+
+	// 时间区间内大模型响应合规检测数量
+	LlmResponseSensitive *int32 `json:"llm_response_sensitive,omitempty"`
+	HttpStatusCode       int    `json:"-"`
 }
 
 func (o ListThreatsResponse) String() string {

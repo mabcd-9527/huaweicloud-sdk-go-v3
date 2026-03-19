@@ -51,6 +51,9 @@ type FullSqlComponetResult struct {
 	// **参数解释**: 归一化SQL。 **取值范围**: 不涉及。
 	Query *string `json:"query,omitempty"`
 
+	// **参数解释**: 解析后的原始SQL文本。 开启track_stmt_parameter参数后，会把SQL文本中的变量替换成真实值，展示原始的SQL。对于track_stmt_parameter参数关闭时采集的SQL文本，无法获取到SQL参数变量的值，展示的内容为空。 **取值范围**: 不涉及。
+	Sql *string `json:"sql,omitempty"`
+
 	// **参数解释**: 线程ID。 **取值范围**: 不涉及。
 	ThreadId *string `json:"thread_id,omitempty"`
 

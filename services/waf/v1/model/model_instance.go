@@ -9,8 +9,8 @@ import (
 	"strings"
 )
 
-// ListInstance 独享引擎实例信息
-type ListInstance struct {
+// Instance 独享引擎实例信息
+type Instance struct {
 
 	// 独享引擎实例ID
 	Id *string `json:"id,omitempty"`
@@ -43,13 +43,13 @@ type ListInstance struct {
 	SecurityGroupIds *[]string `json:"security_group_ids,omitempty"`
 
 	// **参数解释：** 独享引擎计费状态标识，用于指示独享引擎当前的计费使用状态 **约束限制：** 不涉及 **取值范围：**  - 0：正常计费  - 1：冻结，资源和数据会保留，但租户无法再正常使用云服务  - 2：终止，资源和数据将清除 **默认取值：** 不涉及
-	Status *ListInstanceStatus `json:"status,omitempty"`
+	Status *InstanceStatus `json:"status,omitempty"`
 
 	// **参数解释：** 独享引擎运行状态标识，用于反映独享引擎当前的运行生命周期状态 **约束限制：** 不涉及 **取值范围：**  - 0：创建中  - 1：运行中  - 2：删除中  - 3：已删除  - 4：创建失败  - 5：已冻结  - 6：异常  - 7：更新中  - 8：更新失败 **默认取值：** 不涉及
-	RunStatus *ListInstanceRunStatus `json:"run_status,omitempty"`
+	RunStatus *InstanceRunStatus `json:"run_status,omitempty"`
 
 	// **参数解释：** 独享引擎接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
-	AccessStatus *ListInstanceAccessStatus `json:"access_status,omitempty"`
+	AccessStatus *InstanceAccessStatus `json:"access_status,omitempty"`
 
 	// 独享引擎是否可升级（0：不可升级，1：可升级）
 	Upgradable *int32 `json:"upgradable,omitempty"`
@@ -79,46 +79,46 @@ type ListInstance struct {
 	InstanceName *string `json:"instance_name,omitempty"`
 }
 
-func (o ListInstance) String() string {
+func (o Instance) String() string {
 	data, err := utils.Marshal(o)
 	if err != nil {
-		return "ListInstance struct{}"
+		return "Instance struct{}"
 	}
 
-	return strings.Join([]string{"ListInstance", string(data)}, " ")
+	return strings.Join([]string{"Instance", string(data)}, " ")
 }
 
-type ListInstanceStatus struct {
+type InstanceStatus struct {
 	value int32
 }
 
-type ListInstanceStatusEnum struct {
-	E_0 ListInstanceStatus
-	E_1 ListInstanceStatus
-	E_2 ListInstanceStatus
+type InstanceStatusEnum struct {
+	E_0 InstanceStatus
+	E_1 InstanceStatus
+	E_2 InstanceStatus
 }
 
-func GetListInstanceStatusEnum() ListInstanceStatusEnum {
-	return ListInstanceStatusEnum{
-		E_0: ListInstanceStatus{
+func GetInstanceStatusEnum() InstanceStatusEnum {
+	return InstanceStatusEnum{
+		E_0: InstanceStatus{
 			value: 0,
-		}, E_1: ListInstanceStatus{
+		}, E_1: InstanceStatus{
 			value: 1,
-		}, E_2: ListInstanceStatus{
+		}, E_2: InstanceStatus{
 			value: 2,
 		},
 	}
 }
 
-func (c ListInstanceStatus) Value() int32 {
+func (c InstanceStatus) Value() int32 {
 	return c.value
 }
 
-func (c ListInstanceStatus) MarshalJSON() ([]byte, error) {
+func (c InstanceStatus) MarshalJSON() ([]byte, error) {
 	return utils.Marshal(c.value)
 }
 
-func (c *ListInstanceStatus) UnmarshalJSON(b []byte) error {
+func (c *InstanceStatus) UnmarshalJSON(b []byte) error {
 	myConverter := converter.StringConverterFactory("int32")
 	if myConverter == nil {
 		return errors.New("unsupported StringConverter type: int32")
@@ -137,55 +137,55 @@ func (c *ListInstanceStatus) UnmarshalJSON(b []byte) error {
 	}
 }
 
-type ListInstanceRunStatus struct {
+type InstanceRunStatus struct {
 	value int32
 }
 
-type ListInstanceRunStatusEnum struct {
-	E_0 ListInstanceRunStatus
-	E_1 ListInstanceRunStatus
-	E_2 ListInstanceRunStatus
-	E_3 ListInstanceRunStatus
-	E_4 ListInstanceRunStatus
-	E_5 ListInstanceRunStatus
-	E_6 ListInstanceRunStatus
-	E_7 ListInstanceRunStatus
-	E_8 ListInstanceRunStatus
+type InstanceRunStatusEnum struct {
+	E_0 InstanceRunStatus
+	E_1 InstanceRunStatus
+	E_2 InstanceRunStatus
+	E_3 InstanceRunStatus
+	E_4 InstanceRunStatus
+	E_5 InstanceRunStatus
+	E_6 InstanceRunStatus
+	E_7 InstanceRunStatus
+	E_8 InstanceRunStatus
 }
 
-func GetListInstanceRunStatusEnum() ListInstanceRunStatusEnum {
-	return ListInstanceRunStatusEnum{
-		E_0: ListInstanceRunStatus{
+func GetInstanceRunStatusEnum() InstanceRunStatusEnum {
+	return InstanceRunStatusEnum{
+		E_0: InstanceRunStatus{
 			value: 0,
-		}, E_1: ListInstanceRunStatus{
+		}, E_1: InstanceRunStatus{
 			value: 1,
-		}, E_2: ListInstanceRunStatus{
+		}, E_2: InstanceRunStatus{
 			value: 2,
-		}, E_3: ListInstanceRunStatus{
+		}, E_3: InstanceRunStatus{
 			value: 3,
-		}, E_4: ListInstanceRunStatus{
+		}, E_4: InstanceRunStatus{
 			value: 4,
-		}, E_5: ListInstanceRunStatus{
+		}, E_5: InstanceRunStatus{
 			value: 5,
-		}, E_6: ListInstanceRunStatus{
+		}, E_6: InstanceRunStatus{
 			value: 6,
-		}, E_7: ListInstanceRunStatus{
+		}, E_7: InstanceRunStatus{
 			value: 7,
-		}, E_8: ListInstanceRunStatus{
+		}, E_8: InstanceRunStatus{
 			value: 8,
 		},
 	}
 }
 
-func (c ListInstanceRunStatus) Value() int32 {
+func (c InstanceRunStatus) Value() int32 {
 	return c.value
 }
 
-func (c ListInstanceRunStatus) MarshalJSON() ([]byte, error) {
+func (c InstanceRunStatus) MarshalJSON() ([]byte, error) {
 	return utils.Marshal(c.value)
 }
 
-func (c *ListInstanceRunStatus) UnmarshalJSON(b []byte) error {
+func (c *InstanceRunStatus) UnmarshalJSON(b []byte) error {
 	myConverter := converter.StringConverterFactory("int32")
 	if myConverter == nil {
 		return errors.New("unsupported StringConverter type: int32")
@@ -204,34 +204,34 @@ func (c *ListInstanceRunStatus) UnmarshalJSON(b []byte) error {
 	}
 }
 
-type ListInstanceAccessStatus struct {
+type InstanceAccessStatus struct {
 	value int32
 }
 
-type ListInstanceAccessStatusEnum struct {
-	E_0 ListInstanceAccessStatus
-	E_1 ListInstanceAccessStatus
+type InstanceAccessStatusEnum struct {
+	E_0 InstanceAccessStatus
+	E_1 InstanceAccessStatus
 }
 
-func GetListInstanceAccessStatusEnum() ListInstanceAccessStatusEnum {
-	return ListInstanceAccessStatusEnum{
-		E_0: ListInstanceAccessStatus{
+func GetInstanceAccessStatusEnum() InstanceAccessStatusEnum {
+	return InstanceAccessStatusEnum{
+		E_0: InstanceAccessStatus{
 			value: 0,
-		}, E_1: ListInstanceAccessStatus{
+		}, E_1: InstanceAccessStatus{
 			value: 1,
 		},
 	}
 }
 
-func (c ListInstanceAccessStatus) Value() int32 {
+func (c InstanceAccessStatus) Value() int32 {
 	return c.value
 }
 
-func (c ListInstanceAccessStatus) MarshalJSON() ([]byte, error) {
+func (c InstanceAccessStatus) MarshalJSON() ([]byte, error) {
 	return utils.Marshal(c.value)
 }
 
-func (c *ListInstanceAccessStatus) UnmarshalJSON(b []byte) error {
+func (c *InstanceAccessStatus) UnmarshalJSON(b []byte) error {
 	myConverter := converter.StringConverterFactory("int32")
 	if myConverter == nil {
 		return errors.New("unsupported StringConverter type: int32")

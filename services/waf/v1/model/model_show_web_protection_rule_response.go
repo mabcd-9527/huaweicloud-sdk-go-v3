@@ -18,7 +18,7 @@ type ShowWebProtectionRuleResponse struct {
 	// **参数解释：** 关联的CVE编号，对应规则防护的漏洞的CVE标准编号（如CVE-2021-41773） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	CveNumber *string `json:"cve_number,omitempty"`
 
-	// **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危  **取值范围：** - 1 - 2 - 3
+	// **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危 **取值范围：** - 1 - 2 - 3
 	RiskLevel *ShowWebProtectionRuleResponseRiskLevel `json:"risk_level,omitempty"`
 
 	// **参数解释：** 应用类型，指定规则适用的应用场景（如Web应用、API接口） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及

@@ -31,8 +31,6 @@ type DedicatedHostType struct {
 	Category string `json:"category"`
 
 	AvailabilityZoneOfferings *[]DedicatedHostTypeOffering `json:"availability_zone_offerings,omitempty"`
-
-	PageInfo *PageInfo `json:"page_info"`
 }
 
 func (o DedicatedHostType) String() string {

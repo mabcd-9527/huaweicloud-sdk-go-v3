@@ -14,7 +14,7 @@ type CustomRuleConditions struct {
 	// 子字段：  - 字段类型为url、user-agent、ip、refer、request_line、method、reqeust时，不需要传index参数    - 字段类型为params、header、cookie并且子字段为自定义时，index的值为自定义子字段
 	Index *string `json:"index,omitempty"`
 
-	// 条件匹配逻辑。
+	// 条件匹配逻辑
 	LogicOperation *string `json:"logic_operation,omitempty"`
 
 	// 条件匹配的内容

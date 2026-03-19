@@ -18,6 +18,9 @@ type DeletePunishmentRuleResponse struct {
 	// 拦截时间
 	BlockTime *int32 `json:"block_time,omitempty"`
 
+	// 时间单位
+	TimeUnit *string `json:"time_unit,omitempty"`
+
 	// 攻击惩罚类别
 	Category *string `json:"category,omitempty"`
 

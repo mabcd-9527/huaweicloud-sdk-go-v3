@@ -19,7 +19,7 @@ type CollectedWdrSnapshotInfoResultObsBucket struct {
 	Url *string `json:"url,omitempty"`
 
 	// **参数解释**： OBS服务端口号。 **取值范围**： 不涉及。
-	Port *string `json:"port,omitempty"`
+	Port *int32 `json:"port,omitempty"`
 
 	// **参数解释**： 最终租户ID。 **取值范围**： 不涉及。
 	DomainId *string `json:"domain_id,omitempty"`

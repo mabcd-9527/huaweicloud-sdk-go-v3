@@ -14,13 +14,13 @@ type UpdateAnticrawlerRuleRequestBody struct {
 	// 匹配条件列表
 	Conditions []AnticrawlerCondition `json:"conditions"`
 
-	// 规则名称
+	// **参数解释：** 规则名称 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
 	Name string `json:"name"`
 
-	// **参数解释：** JS脚本反爬虫规则类型 **约束限制：** 不涉及 **取值范围：**  - anticrawler_except_url: 防护所有路径模式，在该模式下，查询的JS脚本反爬虫规则为排除的防护路径规则  - anticrawler_specific_url: 防护指定路径模式，在该模式下，查询的JS脚本反爬虫规则为指定要防护的路径规则  **默认取值：** anticrawler_except_url
+	// **参数解释：** JS脚本反爬虫规则类型 **约束限制：** 不支持修改 **取值范围：**  - anticrawler_except_url: 防护所有路径模式，在该模式下，查询的JS脚本反爬虫规则为排除的防护路径规则  - anticrawler_specific_url: 防护指定路径模式，在该模式下，查询的JS脚本反爬虫规则为指定要防护的路径规则 **默认取值：** anticrawler_except_url
 	Type UpdateAnticrawlerRuleRequestBodyType `json:"type"`
 
-	// 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：65535。
+	// **参数解释：** 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高 **约束限制：** 不涉及 **取值范围：** [0, 65535] **默认取值：** 不涉及
 	Priority int32 `json:"priority"`
 }
 

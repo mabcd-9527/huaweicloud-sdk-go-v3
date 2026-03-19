@@ -9,10 +9,10 @@ import (
 // ListTopUrlResponse Response Object
 type ListTopUrlResponse struct {
 
-	// **参数解释：** CountItem的总数量 **约束限制：** 不涉及 **取值范围：** ≥0 **默认取值：** 0
+	// UrlCountItem的总数量
 	Total *int32 `json:"total,omitempty"`
 
-	// **参数解释：** CountItem详细信息列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+	// UrlCountItem详细信息列表
 	Items          *[]UrlCountItem `json:"items,omitempty"`
 	HttpStatusCode int             `json:"-"`
 }

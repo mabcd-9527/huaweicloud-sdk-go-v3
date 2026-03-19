@@ -30,8 +30,11 @@ type ListAntiVirusResultRequest struct {
 	// **参数解释**: 处置状态 **约束限制**: 不涉及 **取值范围**: 包含如下:   - unhandled：未处理   - handled：已处理 **默认取值**: 不涉及
 	HandleStatus *string `json:"handle_status,omitempty"`
 
-	// **参数解释**: 威胁等级 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及
+	// **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及
 	SeverityList *[]string `json:"severity_list,omitempty"`
+
+	// 威胁等级，包含如下:   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+	Severities *string `json:"severities,omitempty"`
 
 	// **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产 - common：一般资产 - test：测试资产  **默认取值**： 无
 	AssetValue *string `json:"asset_value,omitempty"`
@@ -50,6 +53,12 @@ type ListAntiVirusResultRequest struct {
 
 	// **参数解释**: 是否使用手动隔离按钮 **约束限制**: 不涉及 **取值范围**: true（已使用手动隔离）、false（未使用手动隔离） **默认取值**: 不涉及
 	ManualIsolate *bool `json:"manual_isolate,omitempty"`
+
+	// id列表
+	IdList *[]string `json:"id_list,omitempty"`
+
+	// hash列表
+	FileHashList *[]string `json:"file_hash_list,omitempty"`
 }
 
 func (o ListAntiVirusResultRequest) String() string {

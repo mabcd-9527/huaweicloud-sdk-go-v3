@@ -9,7 +9,7 @@ import (
 // CreateCloudWafPostPaidResourceRequestbody 开通云模式按需请求体
 type CreateCloudWafPostPaidResourceRequestbody struct {
 
-	// 租户所在的站点，hec-hk：华为云国际站
+	// 租户所在的站点 - hec-hk：华为云国际站 - hws：华为云大陆站
 	ConsoleArea string `json:"console_area"`
 }
 

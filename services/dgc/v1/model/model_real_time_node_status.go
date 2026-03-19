@@ -10,13 +10,27 @@ import (
 )
 
 type RealTimeNodeStatus struct {
+
+	// 节点名称。
 	Name *string `json:"name,omitempty"`
 
+	// 节点状态： - STARTING：启动中 - NORMAL：正常 - EXCEPTION：异常 - STOPPING： 停止中 - STOPPED：停止 - PAUSE: 暂停 - ABNORMAL: 运行异常/失败 - DISABLE: 节点禁用 - OVERLOAD: 繁忙 - INIT: 初始化
 	Status *RealTimeNodeStatusStatus `json:"status,omitempty"`
 
+	// 节点运行日志路径
 	LogPath *string `json:"logPath,omitempty"`
 
+	// 节点类型
 	NodeType *RealTimeNodeStatusNodeType `json:"nodeType,omitempty"`
+
+	// 上一次实例的执行状态。
+	LastInstanceStatus *string `json:"lastInstanceStatus,omitempty"`
+
+	// 节点运行时内部存放的部分数据。
+	RunningData *string `json:"runningData,omitempty"`
+
+	// 扩展计数器。
+	ExtendCounter *string `json:"extendCounter,omitempty"`
 }
 
 func (o RealTimeNodeStatus) String() string {
@@ -33,17 +47,22 @@ type RealTimeNodeStatusStatus struct {
 }
 
 type RealTimeNodeStatusStatusEnum struct {
-	STARTTING RealTimeNodeStatusStatus
+	STARTING  RealTimeNodeStatusStatus
 	NORMAL    RealTimeNodeStatusStatus
 	EXCEPTION RealTimeNodeStatusStatus
 	STOPPING  RealTimeNodeStatusStatus
 	STOPPED   RealTimeNodeStatusStatus
+	PAUSE     RealTimeNodeStatusStatus
+	ABNORMAL  RealTimeNodeStatusStatus
+	DISABLE   RealTimeNodeStatusStatus
+	OVERLOAD  RealTimeNodeStatusStatus
+	INIT      RealTimeNodeStatusStatus
 }
 
 func GetRealTimeNodeStatusStatusEnum() RealTimeNodeStatusStatusEnum {
 	return RealTimeNodeStatusStatusEnum{
-		STARTTING: RealTimeNodeStatusStatus{
-			value: "STARTTING",
+		STARTING: RealTimeNodeStatusStatus{
+			value: "STARTING",
 		},
 		NORMAL: RealTimeNodeStatusStatus{
 			value: "NORMAL",
@@ -56,6 +75,21 @@ func GetRealTimeNodeStatusStatusEnum() RealTimeNodeStatusStatusEnum {
 		},
 		STOPPED: RealTimeNodeStatusStatus{
 			value: "STOPPED",
+		},
+		PAUSE: RealTimeNodeStatusStatus{
+			value: "PAUSE",
+		},
+		ABNORMAL: RealTimeNodeStatusStatus{
+			value: "ABNORMAL",
+		},
+		DISABLE: RealTimeNodeStatusStatus{
+			value: "DISABLE",
+		},
+		OVERLOAD: RealTimeNodeStatusStatus{
+			value: "OVERLOAD",
+		},
+		INIT: RealTimeNodeStatusStatus{
+			value: "INIT",
 		},
 	}
 }

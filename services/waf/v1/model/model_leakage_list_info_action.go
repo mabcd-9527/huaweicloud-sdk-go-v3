@@ -12,7 +12,7 @@ import (
 // LeakageListInfoAction 规则命中后操作对象
 type LeakageListInfoAction struct {
 
-	// 操作类型。   - “block”：过滤。   - “log”：仅记录
+	// 操作类型。   - block：过滤。   - log：仅记录
 	Category LeakageListInfoActionCategory `json:"category"`
 }
 

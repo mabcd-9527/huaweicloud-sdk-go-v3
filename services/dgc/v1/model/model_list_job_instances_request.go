@@ -27,7 +27,7 @@ type ListJobInstancesRequest struct {
 	// 返回作业实际开始时间小于maxPlanTime的作业实例，单位为毫秒ms。
 	MaxPlanTime *int64 `json:"maxPlanTime,omitempty"`
 
-	// 实例运行状态： - waiting：等待运行 - running：运行中 - success：运行成功 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
+	// 实例运行状态： - waiting：等待运行 - running：运行中 - success：运行成功 - forceSuccess：强制成功 - ignoreSuccess：忽略失败 - freeze：冻结 - skip-by-depend：跳过 - waiting-confirm：待确认执行 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
 	Status *ListJobInstancesRequestStatus `json:"status,omitempty"`
 
 	// 支持通过作业名进行精确查询。
@@ -57,6 +57,11 @@ type ListJobInstancesRequestStatusEnum struct {
 	WAITING           ListJobInstancesRequestStatus
 	RUNNING           ListJobInstancesRequestStatus
 	SUCCESS           ListJobInstancesRequestStatus
+	FORCE_SUCCESS     ListJobInstancesRequestStatus
+	IGNORE_SUCCESS    ListJobInstancesRequestStatus
+	FREEZE            ListJobInstancesRequestStatus
+	SKIP_BY_DEPEND    ListJobInstancesRequestStatus
+	WAITING_CONFIRM   ListJobInstancesRequestStatus
 	FAIL              ListJobInstancesRequestStatus
 	RUNNING_EXCEPTION ListJobInstancesRequestStatus
 	PAUSE             ListJobInstancesRequestStatus
@@ -73,6 +78,21 @@ func GetListJobInstancesRequestStatusEnum() ListJobInstancesRequestStatusEnum {
 		},
 		SUCCESS: ListJobInstancesRequestStatus{
 			value: "success",
+		},
+		FORCE_SUCCESS: ListJobInstancesRequestStatus{
+			value: "forceSuccess",
+		},
+		IGNORE_SUCCESS: ListJobInstancesRequestStatus{
+			value: "ignoreSuccess",
+		},
+		FREEZE: ListJobInstancesRequestStatus{
+			value: "freeze",
+		},
+		SKIP_BY_DEPEND: ListJobInstancesRequestStatus{
+			value: "skip-by-depend",
+		},
+		WAITING_CONFIRM: ListJobInstancesRequestStatus{
+			value: "waiting-confirm",
 		},
 		FAIL: ListJobInstancesRequestStatus{
 			value: "fail",

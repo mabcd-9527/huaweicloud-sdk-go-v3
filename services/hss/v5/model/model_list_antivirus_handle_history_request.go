@@ -27,8 +27,11 @@ type ListAntivirusHandleHistoryRequest struct {
 	// **参数解释**： 文件路径 **约束限制**： 不涉及 **取值范围**： 字符数1-512位 **默认取值**： 不涉及
 	FilePath *string `json:"file_path,omitempty"`
 
-	// **参数解释**: 威胁等级 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及
+	// **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及
 	SeverityList *[]string `json:"severity_list,omitempty"`
+
+	// 威胁等级，包含如下:   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+	Severities *string `json:"severities,omitempty"`
 
 	// **参数解释**: 服务器名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及
 	HostName *string `json:"host_name,omitempty"`

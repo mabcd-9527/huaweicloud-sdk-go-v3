@@ -1137,7 +1137,7 @@ func (c *WafClient) CreatePremiumHostInvoker(request *model.CreatePremiumHostReq
 
 // CreatePrepaidCloudWaf 购买包周期云模式waf
 //
-// 购买包周期云模式waf。
+// 购买包周期云模式waf
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *WafClient) CreatePrepaidCloudWaf(request *model.CreatePrepaidCloudWafRequest) (*model.CreatePrepaidCloudWafResponse, error) {
@@ -3716,6 +3716,27 @@ func (c *WafClient) UpdateIgnoreRule(request *model.UpdateIgnoreRuleRequest) (*m
 func (c *WafClient) UpdateIgnoreRuleInvoker(request *model.UpdateIgnoreRuleRequest) *UpdateIgnoreRuleInvoker {
 	requestDef := GenReqDefForUpdateIgnoreRule()
 	return &UpdateIgnoreRuleInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// UpdateIgnoreRuleHitNum 全局白名单(原误报屏蔽)防护规则的命中次数清零
+//
+// 全局白名单(原误报屏蔽)防护规则的命中次数清零
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *WafClient) UpdateIgnoreRuleHitNum(request *model.UpdateIgnoreRuleHitNumRequest) (*model.UpdateIgnoreRuleHitNumResponse, error) {
+	requestDef := GenReqDefForUpdateIgnoreRuleHitNum()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.UpdateIgnoreRuleHitNumResponse), nil
+	}
+}
+
+// UpdateIgnoreRuleHitNumInvoker 全局白名单(原误报屏蔽)防护规则的命中次数清零
+func (c *WafClient) UpdateIgnoreRuleHitNumInvoker(request *model.UpdateIgnoreRuleHitNumRequest) *UpdateIgnoreRuleHitNumInvoker {
+	requestDef := GenReqDefForUpdateIgnoreRuleHitNum()
+	return &UpdateIgnoreRuleHitNumInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // UpdateInstanceRoute 修改云模式域名路由信息

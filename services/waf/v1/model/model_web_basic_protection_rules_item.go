@@ -21,7 +21,7 @@ type WebBasicProtectionRulesItem struct {
 	// **参数解释：** CVE编号 **取值范围：** 不涉及
 	CveNumber *string `json:"cve_number,omitempty"`
 
-	// **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危  **取值范围：** - 1 - 2 - 3
+	// **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危 **取值范围：** - 1 - 2 - 3
 	RiskLevel *WebBasicProtectionRulesItemRiskLevel `json:"risk_level,omitempty"`
 
 	// **参数解释：** 应用类型 **取值范围：** 不涉及
