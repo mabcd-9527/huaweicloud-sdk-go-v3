@@ -502,6 +502,27 @@ func (c *GaussDBClient) CreateRestoreTablesInvoker(request *model.CreateRestoreT
 	return &CreateRestoreTablesInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// DeleteAutoSqlLimiting 关闭自治限流
+//
+// 关闭自治限流。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBClient) DeleteAutoSqlLimiting(request *model.DeleteAutoSqlLimitingRequest) (*model.DeleteAutoSqlLimitingResponse, error) {
+	requestDef := GenReqDefForDeleteAutoSqlLimiting()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.DeleteAutoSqlLimitingResponse), nil
+	}
+}
+
+// DeleteAutoSqlLimitingInvoker 关闭自治限流
+func (c *GaussDBClient) DeleteAutoSqlLimitingInvoker(request *model.DeleteAutoSqlLimitingRequest) *DeleteAutoSqlLimitingInvoker {
+	requestDef := GenReqDefForDeleteAutoSqlLimiting()
+	return &DeleteAutoSqlLimitingInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // DeleteDatabasePermission 删除数据库用户的数据库权限
 //
 // 删除云数据库 TaurusDB实例数据库用户的数据库权限。
@@ -2309,6 +2330,27 @@ func (c *GaussDBClient) ShowHistoricalSqlFilterRuleInvoker(request *model.ShowHi
 	return &ShowHistoricalSqlFilterRuleInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ShowInstanceBackups 查询指定实例全量备份列表
+//
+// 查询指定实例全量备份列表。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBClient) ShowInstanceBackups(request *model.ShowInstanceBackupsRequest) (*model.ShowInstanceBackupsResponse, error) {
+	requestDef := GenReqDefForShowInstanceBackups()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowInstanceBackupsResponse), nil
+	}
+}
+
+// ShowInstanceBackupsInvoker 查询指定实例全量备份列表
+func (c *GaussDBClient) ShowInstanceBackupsInvoker(request *model.ShowInstanceBackupsRequest) *ShowInstanceBackupsInvoker {
+	requestDef := GenReqDefForShowInstanceBackups()
+	return &ShowInstanceBackupsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ShowInstanceDatabaseVersion 查询内核版本信息
 //
 // 查询内核版本信息。
@@ -4053,6 +4095,48 @@ func (c *GaussDBClient) DeleteClickHouseLtsConfigInvoker(request *model.DeleteCl
 	return &DeleteClickHouseLtsConfigInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// DeleteHtapProcessList 删除HTAP实例会话
+//
+// 删除HTAP实例会话。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBClient) DeleteHtapProcessList(request *model.DeleteHtapProcessListRequest) (*model.DeleteHtapProcessListResponse, error) {
+	requestDef := GenReqDefForDeleteHtapProcessList()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.DeleteHtapProcessListResponse), nil
+	}
+}
+
+// DeleteHtapProcessListInvoker 删除HTAP实例会话
+func (c *GaussDBClient) DeleteHtapProcessListInvoker(request *model.DeleteHtapProcessListRequest) *DeleteHtapProcessListInvoker {
+	requestDef := GenReqDefForDeleteHtapProcessList()
+	return &DeleteHtapProcessListInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// DeleteStarRockLtsConfig 批量解除LTS日志配置
+//
+// 批量解除LTS日志配置。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBClient) DeleteStarRockLtsConfig(request *model.DeleteStarRockLtsConfigRequest) (*model.DeleteStarRockLtsConfigResponse, error) {
+	requestDef := GenReqDefForDeleteStarRockLtsConfig()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.DeleteStarRockLtsConfigResponse), nil
+	}
+}
+
+// DeleteStarRockLtsConfigInvoker 批量解除LTS日志配置
+func (c *GaussDBClient) DeleteStarRockLtsConfigInvoker(request *model.DeleteStarRockLtsConfigRequest) *DeleteStarRockLtsConfigInvoker {
+	requestDef := GenReqDefForDeleteStarRockLtsConfig()
+	return &DeleteStarRockLtsConfigInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // DeleteStarRocksDataReplication 删除StarRocks数据同步
 //
 // 删除StarRocks数据同步。
@@ -4851,6 +4935,27 @@ func (c *GaussDBClient) ShowHtapLtsConfigInvoker(request *model.ShowHtapLtsConfi
 	return &ShowHtapLtsConfigInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ShowHtapProcessList 查询HTAP实例当前会话
+//
+// 查询HTAP实例当前会话。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBClient) ShowHtapProcessList(request *model.ShowHtapProcessListRequest) (*model.ShowHtapProcessListResponse, error) {
+	requestDef := GenReqDefForShowHtapProcessList()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowHtapProcessListResponse), nil
+	}
+}
+
+// ShowHtapProcessListInvoker 查询HTAP实例当前会话
+func (c *GaussDBClient) ShowHtapProcessListInvoker(request *model.ShowHtapProcessListRequest) *ShowHtapProcessListInvoker {
+	requestDef := GenReqDefForShowHtapProcessList()
+	return &ShowHtapProcessListInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ShowHtapQueryQueuesRule 查询当前查询队列开关和阈值
 //
 // 查询当前查询队列开关和阈值。
@@ -5101,6 +5206,27 @@ func (c *GaussDBClient) UpdateHtapQueryQueuesControl(request *model.UpdateHtapQu
 func (c *GaussDBClient) UpdateHtapQueryQueuesControlInvoker(request *model.UpdateHtapQueryQueuesControlRequest) *UpdateHtapQueryQueuesControlInvoker {
 	requestDef := GenReqDefForUpdateHtapQueryQueuesControl()
 	return &UpdateHtapQueryQueuesControlInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// UpdateStarRockLtsConfig 批量创建LTS日志配置
+//
+// 批量创建LTS日志配置。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBClient) UpdateStarRockLtsConfig(request *model.UpdateStarRockLtsConfigRequest) (*model.UpdateStarRockLtsConfigResponse, error) {
+	requestDef := GenReqDefForUpdateStarRockLtsConfig()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.UpdateStarRockLtsConfigResponse), nil
+	}
+}
+
+// UpdateStarRockLtsConfigInvoker 批量创建LTS日志配置
+func (c *GaussDBClient) UpdateStarRockLtsConfigInvoker(request *model.UpdateStarRockLtsConfigRequest) *UpdateStarRockLtsConfigInvoker {
+	requestDef := GenReqDefForUpdateStarRockLtsConfig()
+	return &UpdateStarRockLtsConfigInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // UpdateStarRocksDatabaseUserPassword 修改数据库账号密码

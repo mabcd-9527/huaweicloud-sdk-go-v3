@@ -181,6 +181,22 @@ func (i *BatchTagDelActionInvoker) Invoke() (*model.BatchTagDelActionResponse, e
 	}
 }
 
+type ChangeBackupConfigInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ChangeBackupConfigInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ChangeBackupConfigInvoker) Invoke() (*model.ChangeBackupConfigResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ChangeBackupConfigResponse), nil
+	}
+}
+
 type ChangeFailoverModeInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -2098,6 +2114,22 @@ func (i *ShowAvailableVersionInvoker) Invoke() (*model.ShowAvailableVersionRespo
 		return nil, err
 	} else {
 		return result.(*model.ShowAvailableVersionResponse), nil
+	}
+}
+
+type ShowBackupConfigInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowBackupConfigInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowBackupConfigInvoker) Invoke() (*model.ShowBackupConfigResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowBackupConfigResponse), nil
 	}
 }
 

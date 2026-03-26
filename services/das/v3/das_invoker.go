@@ -885,6 +885,54 @@ func (i *ListInstanceTopSlowLogInvoker) Invoke() (*model.ListInstanceTopSlowLogR
 	}
 }
 
+type ListLockBlockingDbInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListLockBlockingDbInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListLockBlockingDbInvoker) Invoke() (*model.ListLockBlockingDbResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListLockBlockingDbResponse), nil
+	}
+}
+
+type ListLockBlockingDetailInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListLockBlockingDetailInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListLockBlockingDetailInvoker) Invoke() (*model.ListLockBlockingDetailResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListLockBlockingDetailResponse), nil
+	}
+}
+
+type ListLockBlockingRelationshipInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListLockBlockingRelationshipInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListLockBlockingRelationshipInvoker) Invoke() (*model.ListLockBlockingRelationshipResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListLockBlockingRelationshipResponse), nil
+	}
+}
+
 type ListMetadataLocksInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1125,6 +1173,22 @@ func (i *SaveCredentialForBatchInspectionInvoker) Invoke() (*model.SaveCredentia
 	}
 }
 
+type SetLockBlockingSwitchInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *SetLockBlockingSwitchInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *SetLockBlockingSwitchInvoker) Invoke() (*model.SetLockBlockingSwitchResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.SetLockBlockingSwitchResponse), nil
+	}
+}
+
 type SetThresholdForMetricInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1282,6 +1346,54 @@ func (i *ShowLatestDeadLockSnapshotInvoker) Invoke() (*model.ShowLatestDeadLockS
 		return nil, err
 	} else {
 		return result.(*model.ShowLatestDeadLockSnapshotResponse), nil
+	}
+}
+
+type ShowLockBlockingStatisticsInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowLockBlockingStatisticsInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowLockBlockingStatisticsInvoker) Invoke() (*model.ShowLockBlockingStatisticsResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowLockBlockingStatisticsResponse), nil
+	}
+}
+
+type ShowLockBlockingSwitchInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowLockBlockingSwitchInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowLockBlockingSwitchInvoker) Invoke() (*model.ShowLockBlockingSwitchResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowLockBlockingSwitchResponse), nil
+	}
+}
+
+type ShowLockBlockingTrendInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowLockBlockingTrendInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowLockBlockingTrendInvoker) Invoke() (*model.ShowLockBlockingTrendResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowLockBlockingTrendResponse), nil
 	}
 }
 

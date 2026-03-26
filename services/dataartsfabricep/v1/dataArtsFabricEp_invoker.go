@@ -5,6 +5,102 @@ import (
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/services/dataartsfabricep/v1/model"
 )
 
+type CancelJobRunInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *CancelJobRunInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *CancelJobRunInvoker) Invoke() (*model.CancelJobRunResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.CancelJobRunResponse), nil
+	}
+}
+
+type ClearJobRunInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ClearJobRunInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ClearJobRunInvoker) Invoke() (*model.ClearJobRunResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ClearJobRunResponse), nil
+	}
+}
+
+type DeleteJobRunInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DeleteJobRunInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DeleteJobRunInvoker) Invoke() (*model.DeleteJobRunResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DeleteJobRunResponse), nil
+	}
+}
+
+type ListJobRunsInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListJobRunsInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListJobRunsInvoker) Invoke() (*model.ListJobRunsResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListJobRunsResponse), nil
+	}
+}
+
+type RunJobInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *RunJobInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *RunJobInvoker) Invoke() (*model.RunJobResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.RunJobResponse), nil
+	}
+}
+
+type ShowJobRunDetailInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowJobRunDetailInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowJobRunDetailInvoker) Invoke() (*model.ShowJobRunDetailResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowJobRunDetailResponse), nil
+	}
+}
+
 type DeleteServiceInstanceInvoker struct {
 	*invoker.BaseInvoker
 }

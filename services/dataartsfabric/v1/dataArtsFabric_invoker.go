@@ -245,6 +245,102 @@ func (i *ShowAdminHealthCheckInvoker) Invoke() (*model.ShowAdminHealthCheckRespo
 	}
 }
 
+type CreateJobInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *CreateJobInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *CreateJobInvoker) Invoke() (*model.CreateJobResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.CreateJobResponse), nil
+	}
+}
+
+type DeleteJobInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DeleteJobInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DeleteJobInvoker) Invoke() (*model.DeleteJobResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DeleteJobResponse), nil
+	}
+}
+
+type DeleteJobVersionInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DeleteJobVersionInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DeleteJobVersionInvoker) Invoke() (*model.DeleteJobVersionResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DeleteJobVersionResponse), nil
+	}
+}
+
+type ListJobVersionsInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListJobVersionsInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListJobVersionsInvoker) Invoke() (*model.ListJobVersionsResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListJobVersionsResponse), nil
+	}
+}
+
+type ListJobsInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListJobsInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListJobsInvoker) Invoke() (*model.ListJobsResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListJobsResponse), nil
+	}
+}
+
+type UpdateJobInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *UpdateJobInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *UpdateJobInvoker) Invoke() (*model.UpdateJobResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.UpdateJobResponse), nil
+	}
+}
+
 type CreateMessageNotificationPolicyInvoker struct {
 	*invoker.BaseInvoker
 }

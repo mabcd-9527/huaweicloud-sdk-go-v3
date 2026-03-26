@@ -23,6 +23,8 @@ type PhysicalServer struct {
 
 	ManageState *ManageState `json:"manage_state"`
 
+	FrozenState *FrozenState `json:"frozen_state,omitempty"`
+
 	PowerState *PowerState `json:"power_state,omitempty"`
 
 	OperationState *PhysicalServerOperationStatus `json:"operation_state,omitempty"`

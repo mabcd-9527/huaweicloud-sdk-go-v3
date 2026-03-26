@@ -250,6 +250,27 @@ func (c *RdsClient) BatchTagDelActionInvoker(request *model.BatchTagDelActionReq
 	return &BatchTagDelActionInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ChangeBackupConfig 切换实例备份方式（PostgreSQL）
+//
+// 备份管理通用配置接口，目前支持切换备份方式
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *RdsClient) ChangeBackupConfig(request *model.ChangeBackupConfigRequest) (*model.ChangeBackupConfigResponse, error) {
+	requestDef := GenReqDefForChangeBackupConfig()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ChangeBackupConfigResponse), nil
+	}
+}
+
+// ChangeBackupConfigInvoker 切换实例备份方式（PostgreSQL）
+func (c *RdsClient) ChangeBackupConfigInvoker(request *model.ChangeBackupConfigRequest) *ChangeBackupConfigInvoker {
+	requestDef := GenReqDefForChangeBackupConfig()
+	return &ChangeBackupConfigInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ChangeFailoverMode 更改主备实例的数据同步方式
 //
 // 更改主备实例的数据同步方式。
@@ -2777,6 +2798,27 @@ func (c *RdsClient) ShowAvailableVersion(request *model.ShowAvailableVersionRequ
 func (c *RdsClient) ShowAvailableVersionInvoker(request *model.ShowAvailableVersionRequest) *ShowAvailableVersionInvoker {
 	requestDef := GenReqDefForShowAvailableVersion()
 	return &ShowAvailableVersionInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ShowBackupConfig 查询实例备份方式（PostgreSQL）
+//
+// 查询备份管理配置接口。目前支持查询备份方式。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *RdsClient) ShowBackupConfig(request *model.ShowBackupConfigRequest) (*model.ShowBackupConfigResponse, error) {
+	requestDef := GenReqDefForShowBackupConfig()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowBackupConfigResponse), nil
+	}
+}
+
+// ShowBackupConfigInvoker 查询实例备份方式（PostgreSQL）
+func (c *RdsClient) ShowBackupConfigInvoker(request *model.ShowBackupConfigRequest) *ShowBackupConfigInvoker {
+	requestDef := GenReqDefForShowBackupConfig()
+	return &ShowBackupConfigInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // ShowBackupDownloadLink 获取备份下载链接

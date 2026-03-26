@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// UpdateYmlsReqEdit 配置文件信息。
+// UpdateYmlsReqEdit **参数解释**： 配置文件信息。 **约束限制**： 不涉及
 type UpdateYmlsReqEdit struct {
 	Modify *UpdateYmlsReqEditModify `json:"modify,omitempty"`
 

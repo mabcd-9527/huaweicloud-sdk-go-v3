@@ -82,6 +82,27 @@ func (c *CloudtestClient) AddTestCaseResultLogInvoker(request *model.AddTestCase
 	return &AddTestCaseResultLogInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// BatchAddCaseResultInTask 在任务下批量设置用例结果
+//
+// 在任务下批量设置用例结果
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *CloudtestClient) BatchAddCaseResultInTask(request *model.BatchAddCaseResultInTaskRequest) (*model.BatchAddCaseResultInTaskResponse, error) {
+	requestDef := GenReqDefForBatchAddCaseResultInTask()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.BatchAddCaseResultInTaskResponse), nil
+	}
+}
+
+// BatchAddCaseResultInTaskInvoker 在任务下批量设置用例结果
+func (c *CloudtestClient) BatchAddCaseResultInTaskInvoker(request *model.BatchAddCaseResultInTaskRequest) *BatchAddCaseResultInTaskInvoker {
+	requestDef := GenReqDefForBatchAddCaseResultInTask()
+	return &BatchAddCaseResultInTaskInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // BatchAddRelationsByOneCase 添加需求/缺陷和多个用例关联关系
 //
 // 添加需求/缺陷和多个用例关联关系

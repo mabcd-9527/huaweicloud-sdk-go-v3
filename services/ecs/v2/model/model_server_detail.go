@@ -9,6 +9,16 @@ import (
 // ServerDetail 云服务器详情。
 type ServerDetail struct {
 
+	// 容量预留ID
+	CapacityReservationId string `json:"capacity_reservation_id"`
+
+	CapacityReservationSpecification *CapacityReservationSpecification `json:"capacity_reservation_specification"`
+
+	// 共池裸机按整机柜发放的同一批次的批创ID
+	SpodId string `json:"spod_id"`
+
+	EnclaveOptions *EnclaveOptions `json:"enclave_options"`
+
 	// 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
 	Status string `json:"status"`
 

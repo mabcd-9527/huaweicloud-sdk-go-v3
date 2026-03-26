@@ -12,7 +12,7 @@ import (
 type UpdateYmlsReq struct {
 	Edit *UpdateYmlsReqEdit `json:"edit"`
 
-	// 节点类型 目前koosearch集群涉及不同类型的节点。 kos: koosearch的搜索中控节点 kos-doc: koosearch的文档解析节点
+	// **参数解释**： 节点类型。 **约束限制**： KooSearch集群涉及不同类型的节点，其他类型集群不涉及。 **取值范围**： - kos: KooSearch的搜索中控节点 - kos-doc: KooSearch的文档解析节点 **默认取值**： 不涉及
 	InstType *UpdateYmlsReqInstType `json:"inst_type,omitempty"`
 }
 

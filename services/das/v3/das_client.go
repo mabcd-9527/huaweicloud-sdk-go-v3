@@ -1192,6 +1192,72 @@ func (c *DasClient) ListInstanceTopSlowLogInvoker(request *model.ListInstanceTop
 	return &ListInstanceTopSlowLogInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ListLockBlockingDb 查询锁阻塞数据库名列表
+//
+// 查询锁阻塞数据库名列表。
+// 仅支持SQLServer实例。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DasClient) ListLockBlockingDb(request *model.ListLockBlockingDbRequest) (*model.ListLockBlockingDbResponse, error) {
+	requestDef := GenReqDefForListLockBlockingDb()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListLockBlockingDbResponse), nil
+	}
+}
+
+// ListLockBlockingDbInvoker 查询锁阻塞数据库名列表
+func (c *DasClient) ListLockBlockingDbInvoker(request *model.ListLockBlockingDbRequest) *ListLockBlockingDbInvoker {
+	requestDef := GenReqDefForListLockBlockingDb()
+	return &ListLockBlockingDbInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListLockBlockingDetail 查询锁阻塞明细列表
+//
+// 查询锁阻塞明细列表。
+// 仅支持SQLServer实例。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DasClient) ListLockBlockingDetail(request *model.ListLockBlockingDetailRequest) (*model.ListLockBlockingDetailResponse, error) {
+	requestDef := GenReqDefForListLockBlockingDetail()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListLockBlockingDetailResponse), nil
+	}
+}
+
+// ListLockBlockingDetailInvoker 查询锁阻塞明细列表
+func (c *DasClient) ListLockBlockingDetailInvoker(request *model.ListLockBlockingDetailRequest) *ListLockBlockingDetailInvoker {
+	requestDef := GenReqDefForListLockBlockingDetail()
+	return &ListLockBlockingDetailInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListLockBlockingRelationship 查询锁阻塞关系
+//
+// 查询锁阻塞关系。
+// 仅支持SQLServer实例。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DasClient) ListLockBlockingRelationship(request *model.ListLockBlockingRelationshipRequest) (*model.ListLockBlockingRelationshipResponse, error) {
+	requestDef := GenReqDefForListLockBlockingRelationship()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListLockBlockingRelationshipResponse), nil
+	}
+}
+
+// ListLockBlockingRelationshipInvoker 查询锁阻塞关系
+func (c *DasClient) ListLockBlockingRelationshipInvoker(request *model.ListLockBlockingRelationshipRequest) *ListLockBlockingRelationshipInvoker {
+	requestDef := GenReqDefForListLockBlockingRelationship()
+	return &ListLockBlockingRelationshipInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ListMetadataLocks 查询元数据锁列表
 //
 // 查询元数据锁列表。
@@ -1511,6 +1577,27 @@ func (c *DasClient) SaveCredentialForBatchInspectionInvoker(request *model.SaveC
 	return &SaveCredentialForBatchInspectionInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// SetLockBlockingSwitch 设置锁阻塞开关和保存时长
+//
+// 设置锁阻塞开关和保存时长，仅支持SQLServer引擎
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DasClient) SetLockBlockingSwitch(request *model.SetLockBlockingSwitchRequest) (*model.SetLockBlockingSwitchResponse, error) {
+	requestDef := GenReqDefForSetLockBlockingSwitch()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.SetLockBlockingSwitchResponse), nil
+	}
+}
+
+// SetLockBlockingSwitchInvoker 设置锁阻塞开关和保存时长
+func (c *DasClient) SetLockBlockingSwitchInvoker(request *model.SetLockBlockingSwitchRequest) *SetLockBlockingSwitchInvoker {
+	requestDef := GenReqDefForSetLockBlockingSwitch()
+	return &SetLockBlockingSwitchInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // SetThresholdForMetric 设置指标阈值
 //
 // 设置指标阈值
@@ -1720,6 +1807,72 @@ func (c *DasClient) ShowLatestDeadLockSnapshot(request *model.ShowLatestDeadLock
 func (c *DasClient) ShowLatestDeadLockSnapshotInvoker(request *model.ShowLatestDeadLockSnapshotRequest) *ShowLatestDeadLockSnapshotInvoker {
 	requestDef := GenReqDefForShowLatestDeadLockSnapshot()
 	return &ShowLatestDeadLockSnapshotInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ShowLockBlockingStatistics 查询锁阻塞数量统计
+//
+// 查询锁阻塞数量统计。
+// 仅支持SQLServer实例。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DasClient) ShowLockBlockingStatistics(request *model.ShowLockBlockingStatisticsRequest) (*model.ShowLockBlockingStatisticsResponse, error) {
+	requestDef := GenReqDefForShowLockBlockingStatistics()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowLockBlockingStatisticsResponse), nil
+	}
+}
+
+// ShowLockBlockingStatisticsInvoker 查询锁阻塞数量统计
+func (c *DasClient) ShowLockBlockingStatisticsInvoker(request *model.ShowLockBlockingStatisticsRequest) *ShowLockBlockingStatisticsInvoker {
+	requestDef := GenReqDefForShowLockBlockingStatistics()
+	return &ShowLockBlockingStatisticsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ShowLockBlockingSwitch 查询锁阻塞开关和保存时长
+//
+// 查询锁阻塞开关和保存时长。
+// 仅支持SQLServer实例。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DasClient) ShowLockBlockingSwitch(request *model.ShowLockBlockingSwitchRequest) (*model.ShowLockBlockingSwitchResponse, error) {
+	requestDef := GenReqDefForShowLockBlockingSwitch()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowLockBlockingSwitchResponse), nil
+	}
+}
+
+// ShowLockBlockingSwitchInvoker 查询锁阻塞开关和保存时长
+func (c *DasClient) ShowLockBlockingSwitchInvoker(request *model.ShowLockBlockingSwitchRequest) *ShowLockBlockingSwitchInvoker {
+	requestDef := GenReqDefForShowLockBlockingSwitch()
+	return &ShowLockBlockingSwitchInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ShowLockBlockingTrend 查询锁阻塞趋势列表
+//
+// 查询锁阻塞趋势列表。
+// 仅支持SQLServer实例。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DasClient) ShowLockBlockingTrend(request *model.ShowLockBlockingTrendRequest) (*model.ShowLockBlockingTrendResponse, error) {
+	requestDef := GenReqDefForShowLockBlockingTrend()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowLockBlockingTrendResponse), nil
+	}
+}
+
+// ShowLockBlockingTrendInvoker 查询锁阻塞趋势列表
+func (c *DasClient) ShowLockBlockingTrendInvoker(request *model.ShowLockBlockingTrendRequest) *ShowLockBlockingTrendInvoker {
+	requestDef := GenReqDefForShowLockBlockingTrend()
+	return &ShowLockBlockingTrendInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // ShowMetricNamesSupport 多节点单指标支持指标信息

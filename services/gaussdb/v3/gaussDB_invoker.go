@@ -373,6 +373,22 @@ func (i *CreateRestoreTablesInvoker) Invoke() (*model.CreateRestoreTablesRespons
 	}
 }
 
+type DeleteAutoSqlLimitingInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DeleteAutoSqlLimitingInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DeleteAutoSqlLimitingInvoker) Invoke() (*model.DeleteAutoSqlLimitingResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DeleteAutoSqlLimitingResponse), nil
+	}
+}
+
 type DeleteDatabasePermissionInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1749,6 +1765,22 @@ func (i *ShowHistoricalSqlFilterRuleInvoker) Invoke() (*model.ShowHistoricalSqlF
 	}
 }
 
+type ShowInstanceBackupsInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowInstanceBackupsInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowInstanceBackupsInvoker) Invoke() (*model.ShowInstanceBackupsResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowInstanceBackupsResponse), nil
+	}
+}
+
 type ShowInstanceDatabaseVersionInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -3077,6 +3109,38 @@ func (i *DeleteClickHouseLtsConfigInvoker) Invoke() (*model.DeleteClickHouseLtsC
 	}
 }
 
+type DeleteHtapProcessListInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DeleteHtapProcessListInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DeleteHtapProcessListInvoker) Invoke() (*model.DeleteHtapProcessListResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DeleteHtapProcessListResponse), nil
+	}
+}
+
+type DeleteStarRockLtsConfigInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DeleteStarRockLtsConfigInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DeleteStarRockLtsConfigInvoker) Invoke() (*model.DeleteStarRockLtsConfigResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DeleteStarRockLtsConfigResponse), nil
+	}
+}
+
 type DeleteStarRocksDataReplicationInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -3685,6 +3749,22 @@ func (i *ShowHtapLtsConfigInvoker) Invoke() (*model.ShowHtapLtsConfigResponse, e
 	}
 }
 
+type ShowHtapProcessListInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowHtapProcessListInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowHtapProcessListInvoker) Invoke() (*model.ShowHtapProcessListResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowHtapProcessListResponse), nil
+	}
+}
+
 type ShowHtapQueryQueuesRuleInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -3874,6 +3954,22 @@ func (i *UpdateHtapQueryQueuesControlInvoker) Invoke() (*model.UpdateHtapQueryQu
 		return nil, err
 	} else {
 		return result.(*model.UpdateHtapQueryQueuesControlResponse), nil
+	}
+}
+
+type UpdateStarRockLtsConfigInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *UpdateStarRockLtsConfigInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *UpdateStarRockLtsConfigInvoker) Invoke() (*model.UpdateStarRockLtsConfigResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.UpdateStarRockLtsConfigResponse), nil
 	}
 }
 

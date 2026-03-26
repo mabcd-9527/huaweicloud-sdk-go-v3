@@ -53,6 +53,22 @@ func (i *AddTestCaseResultLogInvoker) Invoke() (*model.AddTestCaseResultLogRespo
 	}
 }
 
+type BatchAddCaseResultInTaskInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *BatchAddCaseResultInTaskInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *BatchAddCaseResultInTaskInvoker) Invoke() (*model.BatchAddCaseResultInTaskResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.BatchAddCaseResultInTaskResponse), nil
+	}
+}
+
 type BatchAddRelationsByOneCaseInvoker struct {
 	*invoker.BaseInvoker
 }

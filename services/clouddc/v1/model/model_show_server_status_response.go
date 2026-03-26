@@ -11,6 +11,8 @@ type ShowServerStatusResponse struct {
 	ServerStatus *ServerStatus `json:"server_status,omitempty"`
 
 	ServerPowerStatus *ServerPowerStatus `json:"server_power_status,omitempty"`
+
+	ServerManageState *ServerManageState `json:"server_manage_state,omitempty"`
 	HttpStatusCode    int                `json:"-"`
 }
 

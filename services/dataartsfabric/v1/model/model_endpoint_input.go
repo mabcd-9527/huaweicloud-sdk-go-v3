@@ -23,7 +23,15 @@ type EndpointInput struct {
 
 	Cap *CapRef `json:"cap,omitempty"`
 
-	LogConfig *LogConfig `json:"log_config,omitempty"`
+	Config *EndpointConfig `json:"config,omitempty"`
+
+	CacheList *[]CacheConfig `json:"cache_list,omitempty"`
+
+	// **参数解释**：是否开启公网访问。 **约束限制**：不涉及。 **取值范围**：开启true，关闭false。 **默认取值**：false。
+	PublicAccess *bool `json:"public_access,omitempty"`
+
+	// 自定义镜像ID
+	CustomImageId *string `json:"custom_image_id,omitempty"`
 }
 
 func (o EndpointInput) String() string {

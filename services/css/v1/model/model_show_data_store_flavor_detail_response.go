@@ -16,8 +16,10 @@ type ShowDataStoreFlavorDetailResponse struct {
 	Dbname *string `json:"dbname,omitempty"`
 
 	// **参数解释**： 引擎版本。 **取值范围**： 不涉及
-	Versions       *[]FlavorRespVersionBody `json:"versions,omitempty"`
-	HttpStatusCode int                      `json:"-"`
+	Versions *[]FlavorRespVersionBody `json:"versions,omitempty"`
+
+	ModelList      *ModelList `json:"modelList,omitempty"`
+	HttpStatusCode int        `json:"-"`
 }
 
 func (o ShowDataStoreFlavorDetailResponse) String() string {

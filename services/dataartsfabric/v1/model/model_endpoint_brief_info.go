@@ -36,6 +36,9 @@ type EndpointBriefInfo struct {
 
 	Cap *CapRef `json:"cap,omitempty"`
 
+	// - **参数解释**：CustomImageId。 - **约束限制**：不涉及。 - **取值范围**：长度为[32,36]的英文字符、数字和中划线(-)的组合。 - **默认取值**：不涉及。
+	CustomImageId *string `json:"custom_image_id,omitempty"`
+
 	ReservedResource *ReservedResource `json:"reserved_resource,omitempty"`
 
 	RayResource *RayResourceInfo `json:"ray_resource,omitempty"`

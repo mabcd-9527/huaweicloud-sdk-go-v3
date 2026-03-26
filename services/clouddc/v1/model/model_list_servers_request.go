@@ -12,7 +12,7 @@ import (
 // ListServersRequest Request Object
 type ListServersRequest struct {
 
-	// **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - os-ready: 软调完成 服务器完成软调，即将进行转维。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - maintain:维护中 服务器故障，进入维修 - offboarding：下架中。  **默认取值**： 不涉及
+	// **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - os-ready: 软调完成 服务器完成软调，即将进行转维。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - maintain:维护中 服务器故障，进入维修 - offboarding：下架中。  **默认取值**： 不涉及
 	ManageState *ListServersRequestManageState `json:"manage_state,omitempty"`
 
 	// 上一页数据的最后一条记录的id
@@ -41,7 +41,6 @@ type ListServersRequestManageStateEnum struct {
 	READY       ListServersRequestManageState
 	IN_USE      ListServersRequestManageState
 	MAINTAIN    ListServersRequestManageState
-	FROZEN      ListServersRequestManageState
 	OFFBOARDING ListServersRequestManageState
 }
 
@@ -61,9 +60,6 @@ func GetListServersRequestManageStateEnum() ListServersRequestManageStateEnum {
 		},
 		MAINTAIN: ListServersRequestManageState{
 			value: "maintain",
-		},
-		FROZEN: ListServersRequestManageState{
-			value: "frozen",
 		},
 		OFFBOARDING: ListServersRequestManageState{
 			value: "offboarding",

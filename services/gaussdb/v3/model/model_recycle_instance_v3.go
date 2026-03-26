@@ -60,7 +60,7 @@ type RecycleInstanceV3 struct {
 	RecycleStatus *string `json:"recycle_status,omitempty"`
 
 	// **参数解释**：  实例所有的回收站备份列表。
-	RecycleBakcups *[]RecycleBackupV3 `json:"recycle_bakcups,omitempty"`
+	RecycleBackups *[]RecycleBackupV3 `json:"recycle_backups,omitempty"`
 }
 
 func (o RecycleInstanceV3) String() string {

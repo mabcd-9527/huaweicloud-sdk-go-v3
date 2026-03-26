@@ -23,6 +23,8 @@ type ShowServerResponse struct {
 
 	ManageState *ManageState `json:"manage_state,omitempty"`
 
+	FrozenState *FrozenState `json:"frozen_state,omitempty"`
+
 	PowerState *PowerState `json:"power_state,omitempty"`
 
 	OperationState *PhysicalServerOperationStatus `json:"operation_state,omitempty"`

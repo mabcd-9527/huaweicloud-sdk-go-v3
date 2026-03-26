@@ -36,6 +36,9 @@ type ShowEndpointResponse struct {
 
 	Cap *CapRef `json:"cap,omitempty"`
 
+	// - **参数解释**：CustomImageId。 - **约束限制**：不涉及。 - **取值范围**：长度为[32,36]的英文字符、数字和中划线(-)的组合。 - **默认取值**：不涉及。
+	CustomImageId *string `json:"custom_image_id,omitempty"`
+
 	ReservedResource *ReservedResource `json:"reserved_resource,omitempty"`
 
 	RayResource *RayResourceInfo `json:"ray_resource,omitempty"`
@@ -49,10 +52,14 @@ type ShowEndpointResponse struct {
 	// 调用地址
 	Urls *[]Url `json:"urls,omitempty"`
 
-	LogConfig *LogConfigInfo `json:"log_config,omitempty"`
-
 	// 引擎实例id列表
 	BusinessEngineInstanceIds *[]string `json:"business_engine_instance_ids,omitempty"`
+
+	TokensQuota *TokensQuota `json:"tokens_quota,omitempty"`
+
+	RuntimeEnvType *RuntimeEnvType `json:"runtime_env_type,omitempty"`
+
+	Config *EndpointConfigResponse `json:"config,omitempty"`
 
 	XRequestId     *string `json:"X-request-id,omitempty"`
 	HttpStatusCode int     `json:"-"`

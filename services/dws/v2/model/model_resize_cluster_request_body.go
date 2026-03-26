@@ -21,6 +21,11 @@ type ResizeClusterRequestBody struct {
 
 	// **参数解释**： 扩容完成后是否自动启动重分布，默认是。如果设置为false，扩容后不进行重分布，此时集群任务信息处于“待重分布”状态，无法进行其他操作。 **约束限制**： 不涉及。 **取值范围**： - true：扩容后立即重分布。 - false：扩容后不进行重分布，此时集群任务信息处于“待重分布”状态。  **默认取值**： true
 	AutoRedistribute *bool `json:"auto_redistribute,omitempty"`
+
+	// **参数解释**： 扩容模式，分为在线和离线。在线扩容过程中，支持数据增删改查及部分DDL语法，其余不支持的语法将会报错。在线扩容对业务影响更小，离线模式存在短暂的中断，数据库不可用。 **约束限制**： 不涉及。 **取值范围**： - insert：在线模式。 - read-only：离线模式。  **默认取值**： read-only
+	Mode *string `json:"mode,omitempty"`
+
+	RedisConf *RedisConfReq `json:"redis_conf,omitempty"`
 }
 
 func (o ResizeClusterRequestBody) String() string {

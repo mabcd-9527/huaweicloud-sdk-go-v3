@@ -334,6 +334,132 @@ func (c *DataArtsFabricClient) ShowAdminHealthCheckInvoker(request *model.ShowAd
 	return &ShowAdminHealthCheckInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// CreateJob 创建作业
+//
+// 创建作业。支持创建一个spark或python或ray作业，支持的作业类型有spark、python和ray，接口返回作业的详情。此接口为同步接口，无配套使用接口和特殊场景。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DataArtsFabricClient) CreateJob(request *model.CreateJobRequest) (*model.CreateJobResponse, error) {
+	requestDef := GenReqDefForCreateJob()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.CreateJobResponse), nil
+	}
+}
+
+// CreateJobInvoker 创建作业
+func (c *DataArtsFabricClient) CreateJobInvoker(request *model.CreateJobRequest) *CreateJobInvoker {
+	requestDef := GenReqDefForCreateJob()
+	return &CreateJobInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// DeleteJob 删除指定作业
+//
+// 删除指定作业。删除一个作业，根据id删除对应作业，接口无返回体。此接口为同步接口，无配套使用接口和特殊场景。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DataArtsFabricClient) DeleteJob(request *model.DeleteJobRequest) (*model.DeleteJobResponse, error) {
+	requestDef := GenReqDefForDeleteJob()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.DeleteJobResponse), nil
+	}
+}
+
+// DeleteJobInvoker 删除指定作业
+func (c *DataArtsFabricClient) DeleteJobInvoker(request *model.DeleteJobRequest) *DeleteJobInvoker {
+	requestDef := GenReqDefForDeleteJob()
+	return &DeleteJobInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// DeleteJobVersion 删除指定作业的指定版本
+//
+// 删除作业版本。删除一个作业版本，根据id删除对应作业版本，接口无返回体。此接口为同步接口，无配套使用接口和特殊场景。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DataArtsFabricClient) DeleteJobVersion(request *model.DeleteJobVersionRequest) (*model.DeleteJobVersionResponse, error) {
+	requestDef := GenReqDefForDeleteJobVersion()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.DeleteJobVersionResponse), nil
+	}
+}
+
+// DeleteJobVersionInvoker 删除指定作业的指定版本
+func (c *DataArtsFabricClient) DeleteJobVersionInvoker(request *model.DeleteJobVersionRequest) *DeleteJobVersionInvoker {
+	requestDef := GenReqDefForDeleteJobVersion()
+	return &DeleteJobVersionInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListJobVersions 查询指定作业的版本列表
+//
+// 列举作业版本。列举作业下的作业版本，分页返回。支持按名称、id等信息查询，接口分页返回作业版本列表。此接口为同步接口，无配套使用接口和特殊场景。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DataArtsFabricClient) ListJobVersions(request *model.ListJobVersionsRequest) (*model.ListJobVersionsResponse, error) {
+	requestDef := GenReqDefForListJobVersions()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListJobVersionsResponse), nil
+	}
+}
+
+// ListJobVersionsInvoker 查询指定作业的版本列表
+func (c *DataArtsFabricClient) ListJobVersionsInvoker(request *model.ListJobVersionsRequest) *ListJobVersionsInvoker {
+	requestDef := GenReqDefForListJobVersions()
+	return &ListJobVersionsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListJobs 查询作业列表
+//
+// 列举作业。列举工作空间下的作业，分页返回。支持按作业类型、名称、id、端点等信息查询，接口分页返回作业列表。此接口为同步接口，无配套使用接口和特殊场景。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DataArtsFabricClient) ListJobs(request *model.ListJobsRequest) (*model.ListJobsResponse, error) {
+	requestDef := GenReqDefForListJobs()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListJobsResponse), nil
+	}
+}
+
+// ListJobsInvoker 查询作业列表
+func (c *DataArtsFabricClient) ListJobsInvoker(request *model.ListJobsRequest) *ListJobsInvoker {
+	requestDef := GenReqDefForListJobs()
+	return &ListJobsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// UpdateJob 更新作业
+//
+// 更新作业详情。更新一个作业的详情，支持更新作业名称、描述、当前版本、当前端点和可见性，接口返回更新后的作业详情。此接口为同步接口，无配套使用接口和特殊场景。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DataArtsFabricClient) UpdateJob(request *model.UpdateJobRequest) (*model.UpdateJobResponse, error) {
+	requestDef := GenReqDefForUpdateJob()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.UpdateJobResponse), nil
+	}
+}
+
+// UpdateJobInvoker 更新作业
+func (c *DataArtsFabricClient) UpdateJobInvoker(request *model.UpdateJobRequest) *UpdateJobInvoker {
+	requestDef := GenReqDefForUpdateJob()
+	return &UpdateJobInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // CreateMessageNotificationPolicy 创建消息通知策略
 //
 // 创建消息通知策略

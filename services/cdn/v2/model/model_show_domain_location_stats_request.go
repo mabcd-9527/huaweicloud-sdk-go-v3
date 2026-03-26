@@ -24,6 +24,9 @@ type ShowDomainLocationStatsRequest struct {
 	// - 网络资源消耗   - bw（带宽）   - flux（流量） - 访问情况   - req_num（请求总数） - HTTP状态码（组合指标）   - http_code_2xx(状态码汇总2xx)   - http_code_3xx(状态码汇总3xx)   - http_code_4xx(状态码汇总4xx)   - http_code_5xx(状态码汇总5xx)   - status_code_2xx(状态码详情2xx)   - status_code_3xx(状态码详情3xx)   - status_code_4xx(状态码详情4xx)   - status_code_5xx(状态码详情5xx)
 	StatType string `json:"stat_type"`
 
+	// - 传输协议：IPv4或IPv6,不支持同时指定  - 如果不传，默认取全部
+	IpVersion *string `json:"ip_version,omitempty"`
+
 	// 查询时间间隔，单位：秒，取值说明： - 300(5分钟)：最大查询跨度2天 - 3600(1小时)：最大查询跨度7天 - 86400(1天)：最大查询跨度31天 - 如果不传，默认取对应时间跨度的最小间隔。
 	Interval *int64 `json:"interval,omitempty"`
 

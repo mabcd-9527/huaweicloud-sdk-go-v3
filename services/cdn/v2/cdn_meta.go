@@ -1363,6 +1363,10 @@ func GenReqDefForShowDomainLocationStats() *def.HttpRequestDef {
 		WithJsonTag("stat_type").
 		WithLocationType(def.Query))
 	reqDefBuilder.WithRequestField(def.NewFieldDef().
+		WithName("IpVersion").
+		WithJsonTag("ip_version").
+		WithLocationType(def.Query))
+	reqDefBuilder.WithRequestField(def.NewFieldDef().
 		WithName("Interval").
 		WithJsonTag("interval").
 		WithLocationType(def.Query))

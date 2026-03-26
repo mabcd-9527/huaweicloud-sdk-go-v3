@@ -41,6 +41,9 @@ type ClusterElbInfo struct {
 
 	// **参数解释**： 虚拟私有云ID。 **取值范围**： 不涉及。
 	VpcId *string `json:"vpc_id,omitempty"`
+
+	// **参数解释**： 是否支持跨vpc绑定。 **取值范围**： 不涉及。
+	IpTargetEnable *bool `json:"ip_target_enable,omitempty"`
 }
 
 func (o ClusterElbInfo) String() string {

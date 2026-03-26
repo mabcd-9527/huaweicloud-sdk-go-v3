@@ -29,6 +29,12 @@ type AlarmSubRequest struct {
 
 	// **参数解释**： 时区。 **取值范围**： 不涉及。
 	TimeZone string `json:"time_zone"`
+
+	// **参数解释**： 集群ID。 **取值范围**： 不涉及。
+	ClusterId *string `json:"cluster_id,omitempty"`
+
+	// **参数解释**： 细粒度告警详细信息，规则为告警ID与告警级别用英文冒号分割，告警之间用逗号分割。当该字段不为空时，alarm_level字段需要设置为空 **取值范围**： 不涉及。
+	AlarmDetail *string `json:"alarm_detail,omitempty"`
 }
 
 func (o AlarmSubRequest) String() string {

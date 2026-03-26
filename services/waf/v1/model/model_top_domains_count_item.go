@@ -13,6 +13,9 @@ type TopDomainsCountItem struct {
 
 	// **参数解释：** 数量 **取值范围：** 不涉及
 	Num *int64 `json:"num,omitempty"`
+
+	// **参数解释：** 网站名称，对应WAF控制台域名详情中的网站名称 **取值范围：** 不涉及
+	WebTag *string `json:"web_tag,omitempty"`
 }
 
 func (o TopDomainsCountItem) String() string {
