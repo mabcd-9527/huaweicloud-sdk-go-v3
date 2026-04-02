@@ -2687,6 +2687,27 @@ func (c *GaussDBforopenGaussClient) ModifyParameterConfigTemplateInvoker(request
 	return &ModifyParameterConfigTemplateInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ModifySecurityGroup 修改实例安全组
+//
+// 修改实例安全组。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBforopenGaussClient) ModifySecurityGroup(request *model.ModifySecurityGroupRequest) (*model.ModifySecurityGroupResponse, error) {
+	requestDef := GenReqDefForModifySecurityGroup()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ModifySecurityGroupResponse), nil
+	}
+}
+
+// ModifySecurityGroupInvoker 修改实例安全组
+func (c *GaussDBforopenGaussClient) ModifySecurityGroupInvoker(request *model.ModifySecurityGroupRequest) *ModifySecurityGroupInvoker {
+	requestDef := GenReqDefForModifySecurityGroup()
+	return &ModifySecurityGroupInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ResetConfiguration 重置参数模板
 //
 // 重置参数模板。

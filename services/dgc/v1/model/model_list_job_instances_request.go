@@ -21,10 +21,10 @@ type ListJobInstancesRequest struct {
 	// 分页参数：页数
 	Offset *int32 `json:"offset,omitempty"`
 
-	// 返回作业实际开始时间大于minPlanTime的作业实例，单位为毫秒ms。
+	// 返回作业实例开始运行时间大于minPlanTime的作业实例，单位为毫秒ms，默认设置为查询当天0点。
 	MinPlanTime *int64 `json:"minPlanTime,omitempty"`
 
-	// 返回作业实际开始时间小于maxPlanTime的作业实例，单位为毫秒ms。
+	// 返回作业实例开始运行时间小于maxPlanTime的作业实例，单位为毫秒ms，默认设置为此时的时间点，且开始时间和结束时间的查询范围不超过7天。
 	MaxPlanTime *int64 `json:"maxPlanTime,omitempty"`
 
 	// 实例运行状态： - waiting：等待运行 - running：运行中 - success：运行成功 - forceSuccess：强制成功 - ignoreSuccess：忽略失败 - freeze：冻结 - skip-by-depend：跳过 - waiting-confirm：待确认执行 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消

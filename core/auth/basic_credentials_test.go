@@ -21,6 +21,7 @@ package auth
 
 import (
 	"fmt"
+	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/auth/internal"
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/auth/signer/algorithm"
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/config"
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/impl"
@@ -204,9 +205,11 @@ func TestBasicCredentials_ProcessAuthRequest(t *testing.T) {
 }
 
 func TestBasicCredentialsBuilder_SafeBuild(t *testing.T) {
+	// empty ak
 	_, err := NewBasicCredentialsBuilder().WithAk("").SafeBuild()
 	assert.ErrorContains(t, err, "build credentials failed: input ak cannot be an empty string")
 
+	// set value
 	credentials, err := NewBasicCredentialsBuilder().
 		WithAk("ak").
 		WithSk("sk").
@@ -230,10 +233,23 @@ func TestBasicCredentialsBuilder_SafeBuild(t *testing.T) {
 	assert.Equal(t, "file", credentials.IdTokenFile)
 	assert.NotNil(t, credentials.DerivedPredicate)
 
+	// update value
 	credentials.AK = "new_ak"
 	credentials.ProjectId = "new-project-id"
 	assert.Equal(t, "new_ak", credentials.AK)
 	assert.Equal(t, "new-project-id", credentials.ProjectId)
+
+	// metadata
+	credentials, err = NewBasicCredentialsBuilder().WithProjectId("id").SafeBuild()
+	assert.NoError(t, err)
+	assert.IsType(t, credentials.StsAccessor, internal.NewMetadataAccessor())
+	assert.True(t, credentials.needRefreshSts())
+
+	// federal
+	credentials, err = NewBasicCredentialsBuilder().WithIdpId("idpId").WithIdTokenFile("idTokenFile").SafeBuild()
+	assert.NoError(t, err)
+	assert.IsType(t, credentials.StsAccessor, internal.NewFederalAccessor())
+	assert.True(t, credentials.needRefreshSts())
 }
 
 // Deprecated

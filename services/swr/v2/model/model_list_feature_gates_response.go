@@ -17,7 +17,10 @@ type ListFeatureGatesResponse struct {
 
 	// 是否支持制品扫描
 	EnableArtifactScanning *bool `json:"enableArtifactScanning,omitempty"`
-	HttpStatusCode         int   `json:"-"`
+
+	// 是否支持制品清理
+	EnableArtifactGc *bool `json:"enableArtifactGc,omitempty"`
+	HttpStatusCode   int   `json:"-"`
 }
 
 func (o ListFeatureGatesResponse) String() string {

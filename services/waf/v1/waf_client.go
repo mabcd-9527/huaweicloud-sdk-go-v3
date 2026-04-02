@@ -2185,6 +2185,48 @@ func (c *WafClient) ListInstanceInvoker(request *model.ListInstanceRequest) *Lis
 	return &ListInstanceInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ListInstancePools 查询实例组列表
+//
+// 查询实例组列表
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *WafClient) ListInstancePools(request *model.ListInstancePoolsRequest) (*model.ListInstancePoolsResponse, error) {
+	requestDef := GenReqDefForListInstancePools()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListInstancePoolsResponse), nil
+	}
+}
+
+// ListInstancePoolsInvoker 查询实例组列表
+func (c *WafClient) ListInstancePoolsInvoker(request *model.ListInstancePoolsRequest) *ListInstancePoolsInvoker {
+	requestDef := GenReqDefForListInstancePools()
+	return &ListInstancePoolsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListInstanceStatus 查询WAF独享引擎状态列表
+//
+// 查询WAF独享引擎状态列表
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *WafClient) ListInstanceStatus(request *model.ListInstanceStatusRequest) (*model.ListInstanceStatusResponse, error) {
+	requestDef := GenReqDefForListInstanceStatus()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListInstanceStatusResponse), nil
+	}
+}
+
+// ListInstanceStatusInvoker 查询WAF独享引擎状态列表
+func (c *WafClient) ListInstanceStatusInvoker(request *model.ListInstanceStatusRequest) *ListInstanceStatusInvoker {
+	requestDef := GenReqDefForListInstanceStatus()
+	return &ListInstanceStatusInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ListInstanceTags 查询WAF独享引擎标签
 //
 // 查询WAF独享引擎标签。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
@@ -2311,6 +2353,27 @@ func (c *WafClient) ListOverviewsClassificationInvoker(request *model.ListOvervi
 	return &ListOverviewsClassificationInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ListOverviewsHostDomains 查询泛域名的防护事件中的子域名，仅泛域名存在子域名
+//
+// 查询泛域名的防护事件中的子域名，仅泛域名存在子域名
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *WafClient) ListOverviewsHostDomains(request *model.ListOverviewsHostDomainsRequest) (*model.ListOverviewsHostDomainsResponse, error) {
+	requestDef := GenReqDefForListOverviewsHostDomains()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListOverviewsHostDomainsResponse), nil
+	}
+}
+
+// ListOverviewsHostDomainsInvoker 查询泛域名的防护事件中的子域名，仅泛域名存在子域名
+func (c *WafClient) ListOverviewsHostDomainsInvoker(request *model.ListOverviewsHostDomainsRequest) *ListOverviewsHostDomainsInvoker {
+	requestDef := GenReqDefForListOverviewsHostDomains()
+	return &ListOverviewsHostDomainsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ListPolicy 查询防护策略列表
 //
 // 查询防护策略列表
@@ -2332,9 +2395,30 @@ func (c *WafClient) ListPolicyInvoker(request *model.ListPolicyRequest) *ListPol
 	return &ListPolicyInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
-// ListPremiumHost 独享模式域名列表
+// ListPolicyProtectRules 查询所有策略指定类型的防护规则
 //
-// 独享模式域名列表
+// 查询所有策略指定类型的防护规则
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *WafClient) ListPolicyProtectRules(request *model.ListPolicyProtectRulesRequest) (*model.ListPolicyProtectRulesResponse, error) {
+	requestDef := GenReqDefForListPolicyProtectRules()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListPolicyProtectRulesResponse), nil
+	}
+}
+
+// ListPolicyProtectRulesInvoker 查询所有策略指定类型的防护规则
+func (c *WafClient) ListPolicyProtectRulesInvoker(request *model.ListPolicyProtectRulesRequest) *ListPolicyProtectRulesInvoker {
+	requestDef := GenReqDefForListPolicyProtectRules()
+	return &ListPolicyProtectRulesInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListPremiumHost 查询独享模式域名列表
+//
+// 查询独享模式域名列表
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *WafClient) ListPremiumHost(request *model.ListPremiumHostRequest) (*model.ListPremiumHostResponse, error) {
@@ -2347,7 +2431,7 @@ func (c *WafClient) ListPremiumHost(request *model.ListPremiumHostRequest) (*mod
 	}
 }
 
-// ListPremiumHostInvoker 独享模式域名列表
+// ListPremiumHostInvoker 查询独享模式域名列表
 func (c *WafClient) ListPremiumHostInvoker(request *model.ListPremiumHostRequest) *ListPremiumHostInvoker {
 	requestDef := GenReqDefForListPremiumHost()
 	return &ListPremiumHostInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
@@ -4136,6 +4220,27 @@ func (c *WafClient) CreateQuickAccessDomain(request *model.CreateQuickAccessDoma
 func (c *WafClient) CreateQuickAccessDomainInvoker(request *model.CreateQuickAccessDomainRequest) *CreateQuickAccessDomainInvoker {
 	requestDef := GenReqDefForCreateQuickAccessDomain()
 	return &CreateQuickAccessDomainInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListVulnRules 查询Web防护漏洞情报
+//
+// 查询Web防护漏洞情报
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *WafClient) ListVulnRules(request *model.ListVulnRulesRequest) (*model.ListVulnRulesResponse, error) {
+	requestDef := GenReqDefForListVulnRules()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListVulnRulesResponse), nil
+	}
+}
+
+// ListVulnRulesInvoker 查询Web防护漏洞情报
+func (c *WafClient) ListVulnRulesInvoker(request *model.ListVulnRulesRequest) *ListVulnRulesInvoker {
+	requestDef := GenReqDefForListVulnRules()
+	return &ListVulnRulesInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // ShowWebProtectionRule 根据Id查询Web防护规则

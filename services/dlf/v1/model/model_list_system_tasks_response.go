@@ -46,6 +46,7 @@ type ListSystemTasksResponseStatusEnum struct {
 	RUNNING    ListSystemTasksResponseStatus
 	SUCCESSFUL ListSystemTasksResponseStatus
 	FAILED     ListSystemTasksResponseStatus
+	WARNING    ListSystemTasksResponseStatus
 }
 
 func GetListSystemTasksResponseStatusEnum() ListSystemTasksResponseStatusEnum {
@@ -58,6 +59,9 @@ func GetListSystemTasksResponseStatusEnum() ListSystemTasksResponseStatusEnum {
 		},
 		FAILED: ListSystemTasksResponseStatus{
 			value: "FAILED",
+		},
+		WARNING: ListSystemTasksResponseStatus{
+			value: "WARNING",
 		},
 	}
 }

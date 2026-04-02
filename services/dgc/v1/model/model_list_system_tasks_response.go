@@ -27,7 +27,7 @@ type ListSystemTasksResponse struct {
 	// 作业最后更新日期 13位时间戳
 	LastUpdate *int64 `json:"lastUpdate,omitempty"`
 
-	// 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
+	// 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败 WARNING：告警
 	Status *ListSystemTasksResponseStatus `json:"status,omitempty"`
 
 	// 作业消息
@@ -55,6 +55,7 @@ type ListSystemTasksResponseStatusEnum struct {
 	RUNNING    ListSystemTasksResponseStatus
 	SUCCESSFUL ListSystemTasksResponseStatus
 	FAILED     ListSystemTasksResponseStatus
+	WARNING    ListSystemTasksResponseStatus
 }
 
 func GetListSystemTasksResponseStatusEnum() ListSystemTasksResponseStatusEnum {
@@ -67,6 +68,9 @@ func GetListSystemTasksResponseStatusEnum() ListSystemTasksResponseStatusEnum {
 		},
 		FAILED: ListSystemTasksResponseStatus{
 			value: "FAILED",
+		},
+		WARNING: ListSystemTasksResponseStatus{
+			value: "WARNING",
 		},
 	}
 }

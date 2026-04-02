@@ -1771,9 +1771,9 @@ func (c *EcsClient) ShowAppendableVolumeQuotaInvoker(request *model.ShowAppendab
 	return &ShowAppendableVolumeQuotaInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
-// ShowFlavorCapacity 查询flavor的容量
+// ShowFlavorCapacity 查询规格的容量
 //
-// 查询flavor的容量
+// 查询规格的容量
 //
 // Please refer to HUAWEI cloud API Explorer for details.
 func (c *EcsClient) ShowFlavorCapacity(request *model.ShowFlavorCapacityRequest) (*model.ShowFlavorCapacityResponse, error) {
@@ -1786,7 +1786,7 @@ func (c *EcsClient) ShowFlavorCapacity(request *model.ShowFlavorCapacityRequest)
 	}
 }
 
-// ShowFlavorCapacityInvoker 查询flavor的容量
+// ShowFlavorCapacityInvoker 查询规格的容量
 func (c *EcsClient) ShowFlavorCapacityInvoker(request *model.ShowFlavorCapacityRequest) *ShowFlavorCapacityInvoker {
 	requestDef := GenReqDefForShowFlavorCapacity()
 	return &ShowFlavorCapacityInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}

@@ -1653,6 +1653,38 @@ func (i *ListInstanceInvoker) Invoke() (*model.ListInstanceResponse, error) {
 	}
 }
 
+type ListInstancePoolsInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListInstancePoolsInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListInstancePoolsInvoker) Invoke() (*model.ListInstancePoolsResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListInstancePoolsResponse), nil
+	}
+}
+
+type ListInstanceStatusInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListInstanceStatusInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListInstanceStatusInvoker) Invoke() (*model.ListInstanceStatusResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListInstanceStatusResponse), nil
+	}
+}
+
 type ListInstanceTagsInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1749,6 +1781,22 @@ func (i *ListOverviewsClassificationInvoker) Invoke() (*model.ListOverviewsClass
 	}
 }
 
+type ListOverviewsHostDomainsInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListOverviewsHostDomainsInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListOverviewsHostDomainsInvoker) Invoke() (*model.ListOverviewsHostDomainsResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListOverviewsHostDomainsResponse), nil
+	}
+}
+
 type ListPolicyInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1762,6 +1810,22 @@ func (i *ListPolicyInvoker) Invoke() (*model.ListPolicyResponse, error) {
 		return nil, err
 	} else {
 		return result.(*model.ListPolicyResponse), nil
+	}
+}
+
+type ListPolicyProtectRulesInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListPolicyProtectRulesInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListPolicyProtectRulesInvoker) Invoke() (*model.ListPolicyProtectRulesResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListPolicyProtectRulesResponse), nil
 	}
 }
 
@@ -3138,6 +3202,22 @@ func (i *CreateQuickAccessDomainInvoker) Invoke() (*model.CreateQuickAccessDomai
 		return nil, err
 	} else {
 		return result.(*model.CreateQuickAccessDomainResponse), nil
+	}
+}
+
+type ListVulnRulesInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListVulnRulesInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListVulnRulesInvoker) Invoke() (*model.ListVulnRulesResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListVulnRulesResponse), nil
 	}
 }
 

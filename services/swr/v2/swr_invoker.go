@@ -1461,6 +1461,22 @@ func (i *DeleteSubResourceTagsInvoker) Invoke() (*model.DeleteSubResourceTagsRes
 	}
 }
 
+type ExecuteGcScheduleInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ExecuteGcScheduleInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ExecuteGcScheduleInvoker) Invoke() (*model.ExecuteGcScheduleResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ExecuteGcScheduleResponse), nil
+	}
+}
+
 type ExecuteInstanceReplicationPolicyInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1570,6 +1586,22 @@ func (i *ListFeatureGatesInvoker) Invoke() (*model.ListFeatureGatesResponse, err
 		return nil, err
 	} else {
 		return result.(*model.ListFeatureGatesResponse), nil
+	}
+}
+
+type ListGcTasksInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListGcTasksInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListGcTasksInvoker) Invoke() (*model.ListGcTasksResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListGcTasksResponse), nil
 	}
 }
 
@@ -2149,6 +2181,38 @@ func (i *ListSubResourceTagsInvoker) Invoke() (*model.ListSubResourceTagsRespons
 	}
 }
 
+type ShowGcScheduleInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowGcScheduleInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowGcScheduleInvoker) Invoke() (*model.ShowGcScheduleResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowGcScheduleResponse), nil
+	}
+}
+
+type ShowGcTaskInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowGcTaskInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowGcTaskInvoker) Invoke() (*model.ShowGcTaskResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowGcTaskResponse), nil
+	}
+}
+
 type ShowInstanceInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -2421,6 +2485,22 @@ func (i *StartManualScanningInvoker) Invoke() (*model.StartManualScanningRespons
 	}
 }
 
+type StopGcTaskInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *StopGcTaskInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *StopGcTaskInvoker) Invoke() (*model.StopGcTaskResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.StopGcTaskResponse), nil
+	}
+}
+
 type StopInstanceReplicationPolicyExecutionInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -2450,6 +2530,22 @@ func (i *UpdateDomainNameInvoker) Invoke() (*model.UpdateDomainNameResponse, err
 		return nil, err
 	} else {
 		return result.(*model.UpdateDomainNameResponse), nil
+	}
+}
+
+type UpdateGcScheduleInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *UpdateGcScheduleInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *UpdateGcScheduleInvoker) Invoke() (*model.UpdateGcScheduleResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.UpdateGcScheduleResponse), nil
 	}
 }
 

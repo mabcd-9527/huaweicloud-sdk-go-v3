@@ -1,3 +1,94 @@
+# 0.1.191 2026-04-02
+
+### HuaweiCloud SDK Core
+
+- _Features_
+  - Obtaining temporary AK/SK and security token using Pod Identity in CCE clusters is supported.
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK DGC
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSystemTasks**
+    - changes of response param
+      - `+ status: enum value [WARNING]`
+      - `+ subtasks.status: enum value [WARNING]`
+
+### HuaweiCloud SDK DLF
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSystemTasks**
+    - changes of response param
+      - `+ status: enum value [WARNING]`
+      - `+ subTasks.status: enum value [WARNING]`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the API `ModifySecurityGroup`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK SWR
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the following APIs:
+    - `ListGcTasks`
+    - `ShowGcTask`
+    - `StopGcTask`
+    - `ShowGcSchedule`
+    - `UpdateGcSchedule`
+    - `ExecuteGcSchedule`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListFeatureGates**
+    - changes of response param
+      - `+ enableArtifactGc`
+
+### HuaweiCloud SDK WAF
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListOverviewsHostDomains`
+    - `ListVulnRules`
+    - `ListInstanceStatus`
+    - `ListPolicyProtectRules`
+    - `ListInstancePools`
+- _Bug Fix_
+  - None
+- _Change_
+  - **UpdatePolicyRuleStatus**
+    - changes of request param
+      - `+ rule_type`
+      - `- ruletype`
+  - **BatchDeleteRules**
+    - changes of request param
+      - `+ rule_type: enum value [llm-guards]`
+
 # 0.1.190 2026-03-26
 
 ### HuaweiCloud SDK CDN

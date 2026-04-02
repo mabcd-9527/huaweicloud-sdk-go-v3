@@ -20,6 +20,7 @@
 package auth
 
 import (
+	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/auth/internal"
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/config"
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/impl"
 	"github.com/huaweicloud/huaweicloud-sdk-go-v3/core/request"
@@ -34,42 +35,6 @@ import (
 	"testing"
 	"time"
 )
-
-func TestBaseCredentials_NeedUpdate(t *testing.T) {
-	credentials, err := NewBaseCredentialsBuilder().SafeBuild()
-	assert.NoError(t, err)
-	// Manually specifying a security token
-	credentials, err = NewBaseCredentialsBuilder().
-		WithAk("ak").
-		WithSk("sk").
-		WithSecurityToken("token").
-		SafeBuild()
-	assert.NoError(t, err)
-	assert.False(t, credentials.needUpdateSecurityTokenFromMetadata())
-	// Automatically update the expired security token
-	credentials.expiredAt = 1
-	assert.True(t, credentials.needUpdateSecurityTokenFromMetadata())
-	// The security token has not expired
-	credentials.expiredAt = time.Now().Unix() + 10000
-	assert.False(t, credentials.needUpdateSecurityTokenFromMetadata())
-}
-
-func TestBaseCredentials_NeedUpdateAuthToken(t *testing.T) {
-	credentials, err := NewBaseCredentialsBuilder().SafeBuild()
-	assert.NoError(t, err)
-	// Without idp_id or id_token
-	assert.False(t, credentials.needUpdateFederalAuthToken())
-	credentials.IdpId = "idp_id"
-	credentials.IdTokenFile = "file"
-	// Get the auth token for the first time
-	assert.True(t, credentials.needUpdateFederalAuthToken())
-	// Automatically update the expired auth token
-	credentials.SecurityToken = "sec-token"
-	assert.True(t, credentials.needUpdateFederalAuthToken())
-	// The auth token has not expired
-	credentials.expiredAt = time.Now().Unix() + 10000
-	assert.False(t, credentials.needUpdateFederalAuthToken())
-}
 
 func TestBaseCredentialsBuilder_SafeBuild(t *testing.T) {
 	credentials, err := NewBaseCredentialsBuilder().
@@ -88,7 +53,33 @@ func TestBaseCredentialsBuilder_SafeBuild(t *testing.T) {
 	assert.Equal(t, "xxx", credentials.SecurityToken)
 }
 
-func TestBaseCredentials_updateAuthTokenByIdToken(t *testing.T) {
+func TestBaseCredentials_NeedRefresh(t *testing.T) {
+	credentials, err := NewBaseCredentialsBuilder().SafeBuild()
+	assert.NoError(t, err)
+	assert.True(t, credentials.needRefreshSts())
+	credentials.expireAt = time.Now().Unix() + 10000
+	assert.False(t, credentials.needRefreshSts())
+}
+
+func TestBaseCredentials_MetadataAccessor(t *testing.T) {
+	mockServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		_, err := w.Write([]byte(`{"credential":{"access":"ak","expires_at":"2020-01-08T03:50:07.574000Z","secret":"sk","securitytoken":"sec-token"}}`))
+		assert.NoError(t, err)
+
+	}))
+	defer mockServer.Close()
+
+	internal.MetadataEndpoint = mockServer.URL
+	credentials, err := NewBaseCredentialsBuilder().SafeBuild()
+	assert.NoError(t, err)
+	err = credentials.ProcessSts(nil)
+	assert.NoError(t, err)
+	assert.Equal(t, "ak", credentials.AK)
+	assert.Equal(t, "sk", credentials.SK)
+	assert.Equal(t, "sec-token", credentials.SecurityToken)
+}
+
+func TestBaseCredentials_FederalAccessor(t *testing.T) {
 	var count int32
 	mockServer := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
@@ -133,7 +124,7 @@ func TestBaseCredentials_updateAuthTokenByIdToken(t *testing.T) {
 		SafeBuild()
 	assert.NoError(t, err)
 	client := impl.NewDefaultHttpClient(config.DefaultHttpConfig().WithIgnoreSSLVerification(true))
-	err = cred.updateAuthTokenByIdToken(client)
+	err = cred.ProcessSts(client)
 	assert.NoError(t, err)
 	assert.Equal(t, "ak", cred.AK)
 	assert.Equal(t, "sk", cred.SK)
@@ -146,25 +137,6 @@ func TestBaseCredentials_IsDerivedAuth(t *testing.T) {
 	}).SafeBuild()
 	assert.NoError(t, err)
 	assert.True(t, credentials.IsDerivedAuth(nil))
-}
-
-func TestBaseCredentials_needUpdateSecurityTokenFromMetadata(t *testing.T) {
-	credentials, err := NewBaseCredentialsBuilder().SafeBuild()
-	assert.NoError(t, err)
-	assert.True(t, credentials.needUpdateSecurityTokenFromMetadata())
-}
-
-func TestBaseCredentials_getIdToken(t *testing.T) {
-	tmpDir := t.TempDir()
-	filePath := filepath.Join(tmpDir, "BaseTestIdTokenFile")
-	err := os.WriteFile(filePath, []byte(""), 0600)
-	filePath, err = filepath.Abs(filePath)
-	assert.NoError(t, err)
-
-	credentials, err := NewBaseCredentialsBuilder().WithIdpId("id").WithIdTokenFile(filePath).SafeBuild()
-	assert.NoError(t, err)
-	_, err = credentials.getIdToken()
-	assert.Errorf(t, err, "id token is empty")
 }
 
 func TestBaseCredentials_baseProcessAuthRequest(t *testing.T) {

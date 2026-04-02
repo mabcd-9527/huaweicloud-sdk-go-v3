@@ -18,8 +18,8 @@ type UpdatePolicyRuleStatusRequest struct {
 	// **参数解释：** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	PolicyId string `json:"policy_id"`
 
-	// **参数解释：** 规则类型 **约束限制：** 需要购买“大模型防火墙”服务后才可使用llm-guards **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 - llm-guards 大模型防火墙 **默认取值：** 不涉及
-	Ruletype UpdatePolicyRuleStatusRequestRuletype `json:"ruletype"`
+	// **参数解释：** 规则类型 **约束限制：** 不涉及 **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 **默认取值：** 不涉及
+	RuleType UpdatePolicyRuleStatusRequestRuleType `json:"rule_type"`
 
 	// **参数解释：** 规则id，通过对应规则类型的查询防护规则列表接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
 	RuleId string `json:"rule_id"`
@@ -36,67 +36,63 @@ func (o UpdatePolicyRuleStatusRequest) String() string {
 	return strings.Join([]string{"UpdatePolicyRuleStatusRequest", string(data)}, " ")
 }
 
-type UpdatePolicyRuleStatusRequestRuletype struct {
+type UpdatePolicyRuleStatusRequestRuleType struct {
 	value string
 }
 
-type UpdatePolicyRuleStatusRequestRuletypeEnum struct {
-	CC            UpdatePolicyRuleStatusRequestRuletype
-	CUSTOM        UpdatePolicyRuleStatusRequestRuletype
-	WHITEBLACKIP  UpdatePolicyRuleStatusRequestRuletype
-	PRIVACY       UpdatePolicyRuleStatusRequestRuletype
-	IGNORE        UpdatePolicyRuleStatusRequestRuletype
-	GEOIP         UpdatePolicyRuleStatusRequestRuletype
-	ANTITAMPER    UpdatePolicyRuleStatusRequestRuletype
-	ANTILEAKAGE   UpdatePolicyRuleStatusRequestRuletype
-	IP_REPUTATION UpdatePolicyRuleStatusRequestRuletype
-	LLM_GUARDS    UpdatePolicyRuleStatusRequestRuletype
+type UpdatePolicyRuleStatusRequestRuleTypeEnum struct {
+	CC            UpdatePolicyRuleStatusRequestRuleType
+	CUSTOM        UpdatePolicyRuleStatusRequestRuleType
+	WHITEBLACKIP  UpdatePolicyRuleStatusRequestRuleType
+	PRIVACY       UpdatePolicyRuleStatusRequestRuleType
+	IGNORE        UpdatePolicyRuleStatusRequestRuleType
+	GEOIP         UpdatePolicyRuleStatusRequestRuleType
+	ANTITAMPER    UpdatePolicyRuleStatusRequestRuleType
+	ANTILEAKAGE   UpdatePolicyRuleStatusRequestRuleType
+	IP_REPUTATION UpdatePolicyRuleStatusRequestRuleType
 }
 
-func GetUpdatePolicyRuleStatusRequestRuletypeEnum() UpdatePolicyRuleStatusRequestRuletypeEnum {
-	return UpdatePolicyRuleStatusRequestRuletypeEnum{
-		CC: UpdatePolicyRuleStatusRequestRuletype{
+func GetUpdatePolicyRuleStatusRequestRuleTypeEnum() UpdatePolicyRuleStatusRequestRuleTypeEnum {
+	return UpdatePolicyRuleStatusRequestRuleTypeEnum{
+		CC: UpdatePolicyRuleStatusRequestRuleType{
 			value: "cc",
 		},
-		CUSTOM: UpdatePolicyRuleStatusRequestRuletype{
+		CUSTOM: UpdatePolicyRuleStatusRequestRuleType{
 			value: "custom",
 		},
-		WHITEBLACKIP: UpdatePolicyRuleStatusRequestRuletype{
+		WHITEBLACKIP: UpdatePolicyRuleStatusRequestRuleType{
 			value: "whiteblackip",
 		},
-		PRIVACY: UpdatePolicyRuleStatusRequestRuletype{
+		PRIVACY: UpdatePolicyRuleStatusRequestRuleType{
 			value: "privacy",
 		},
-		IGNORE: UpdatePolicyRuleStatusRequestRuletype{
+		IGNORE: UpdatePolicyRuleStatusRequestRuleType{
 			value: "ignore",
 		},
-		GEOIP: UpdatePolicyRuleStatusRequestRuletype{
+		GEOIP: UpdatePolicyRuleStatusRequestRuleType{
 			value: "geoip",
 		},
-		ANTITAMPER: UpdatePolicyRuleStatusRequestRuletype{
+		ANTITAMPER: UpdatePolicyRuleStatusRequestRuleType{
 			value: "antitamper",
 		},
-		ANTILEAKAGE: UpdatePolicyRuleStatusRequestRuletype{
+		ANTILEAKAGE: UpdatePolicyRuleStatusRequestRuleType{
 			value: "antileakage",
 		},
-		IP_REPUTATION: UpdatePolicyRuleStatusRequestRuletype{
+		IP_REPUTATION: UpdatePolicyRuleStatusRequestRuleType{
 			value: "ip-reputation",
-		},
-		LLM_GUARDS: UpdatePolicyRuleStatusRequestRuletype{
-			value: "llm-guards",
 		},
 	}
 }
 
-func (c UpdatePolicyRuleStatusRequestRuletype) Value() string {
+func (c UpdatePolicyRuleStatusRequestRuleType) Value() string {
 	return c.value
 }
 
-func (c UpdatePolicyRuleStatusRequestRuletype) MarshalJSON() ([]byte, error) {
+func (c UpdatePolicyRuleStatusRequestRuleType) MarshalJSON() ([]byte, error) {
 	return utils.Marshal(c.value)
 }
 
-func (c *UpdatePolicyRuleStatusRequestRuletype) UnmarshalJSON(b []byte) error {
+func (c *UpdatePolicyRuleStatusRequestRuleType) UnmarshalJSON(b []byte) error {
 	myConverter := converter.StringConverterFactory("string")
 	if myConverter == nil {
 		return errors.New("unsupported StringConverter type: string")

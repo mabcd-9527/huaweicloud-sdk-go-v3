@@ -20,7 +20,7 @@ type SubTaskStatus struct {
 	// 作业最后更新日期
 	LastUpdate *int64 `json:"lastUpdate,omitempty"`
 
-	// 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
+	// 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败 WARNING：告警
 	Status *SubTaskStatusStatus `json:"status,omitempty"`
 
 	// 作业消息
@@ -44,6 +44,7 @@ type SubTaskStatusStatusEnum struct {
 	RUNNING    SubTaskStatusStatus
 	SUCCESSFUL SubTaskStatusStatus
 	FAILED     SubTaskStatusStatus
+	WARNING    SubTaskStatusStatus
 }
 
 func GetSubTaskStatusStatusEnum() SubTaskStatusStatusEnum {
@@ -56,6 +57,9 @@ func GetSubTaskStatusStatusEnum() SubTaskStatusStatusEnum {
 		},
 		FAILED: SubTaskStatusStatus{
 			value: "FAILED",
+		},
+		WARNING: SubTaskStatusStatus{
+			value: "WARNING",
 		},
 	}
 }

@@ -40,6 +40,7 @@ type SubTaskStatusStatusEnum struct {
 	RUNNING    SubTaskStatusStatus
 	SUCCESSFUL SubTaskStatusStatus
 	FAILED     SubTaskStatusStatus
+	WARNING    SubTaskStatusStatus
 }
 
 func GetSubTaskStatusStatusEnum() SubTaskStatusStatusEnum {
@@ -52,6 +53,9 @@ func GetSubTaskStatusStatusEnum() SubTaskStatusStatusEnum {
 		},
 		FAILED: SubTaskStatusStatus{
 			value: "FAILED",
+		},
+		WARNING: SubTaskStatusStatus{
+			value: "WARNING",
 		},
 	}
 }

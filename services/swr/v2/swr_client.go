@@ -1930,6 +1930,27 @@ func (c *SwrClient) DeleteSubResourceTagsInvoker(request *model.DeleteSubResourc
 	return &DeleteSubResourceTagsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ExecuteGcSchedule 执行制品清理计划
+//
+// 执行制品清理计划
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *SwrClient) ExecuteGcSchedule(request *model.ExecuteGcScheduleRequest) (*model.ExecuteGcScheduleResponse, error) {
+	requestDef := GenReqDefForExecuteGcSchedule()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ExecuteGcScheduleResponse), nil
+	}
+}
+
+// ExecuteGcScheduleInvoker 执行制品清理计划
+func (c *SwrClient) ExecuteGcScheduleInvoker(request *model.ExecuteGcScheduleRequest) *ExecuteGcScheduleInvoker {
+	requestDef := GenReqDefForExecuteGcSchedule()
+	return &ExecuteGcScheduleInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ExecuteInstanceReplicationPolicy 手动执行镜像同步策略
 //
 // 手动执行同步策略
@@ -2075,6 +2096,27 @@ func (c *SwrClient) ListFeatureGates(request *model.ListFeatureGatesRequest) (*m
 func (c *SwrClient) ListFeatureGatesInvoker(request *model.ListFeatureGatesRequest) *ListFeatureGatesInvoker {
 	requestDef := GenReqDefForListFeatureGates()
 	return &ListFeatureGatesInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListGcTasks 查询制品清理的任务列表
+//
+// 查询制品清理的任务列表
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *SwrClient) ListGcTasks(request *model.ListGcTasksRequest) (*model.ListGcTasksResponse, error) {
+	requestDef := GenReqDefForListGcTasks()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListGcTasksResponse), nil
+	}
+}
+
+// ListGcTasksInvoker 查询制品清理的任务列表
+func (c *SwrClient) ListGcTasksInvoker(request *model.ListGcTasksRequest) *ListGcTasksInvoker {
+	requestDef := GenReqDefForListGcTasks()
+	return &ListGcTasksInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // ListGlobalFeatureGates 查询全局特性开关信息
@@ -2833,6 +2875,48 @@ func (c *SwrClient) ListSubResourceTagsInvoker(request *model.ListSubResourceTag
 	return &ListSubResourceTagsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ShowGcSchedule 获取制品清理的计划信息
+//
+// 获取制品清理的计划信息
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *SwrClient) ShowGcSchedule(request *model.ShowGcScheduleRequest) (*model.ShowGcScheduleResponse, error) {
+	requestDef := GenReqDefForShowGcSchedule()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowGcScheduleResponse), nil
+	}
+}
+
+// ShowGcScheduleInvoker 获取制品清理的计划信息
+func (c *SwrClient) ShowGcScheduleInvoker(request *model.ShowGcScheduleRequest) *ShowGcScheduleInvoker {
+	requestDef := GenReqDefForShowGcSchedule()
+	return &ShowGcScheduleInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ShowGcTask 查询制品清理的任务详情
+//
+// 查询制品清理的任务详情
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *SwrClient) ShowGcTask(request *model.ShowGcTaskRequest) (*model.ShowGcTaskResponse, error) {
+	requestDef := GenReqDefForShowGcTask()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowGcTaskResponse), nil
+	}
+}
+
+// ShowGcTaskInvoker 查询制品清理的任务详情
+func (c *SwrClient) ShowGcTaskInvoker(request *model.ShowGcTaskRequest) *ShowGcTaskInvoker {
+	requestDef := GenReqDefForShowGcTask()
+	return &ShowGcTaskInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ShowInstance 获取实例详情
 //
 // 获取实例详情
@@ -3190,6 +3274,27 @@ func (c *SwrClient) StartManualScanningInvoker(request *model.StartManualScannin
 	return &StartManualScanningInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// StopGcTask 停止制品清理任务
+//
+// 停止制品清理任务
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *SwrClient) StopGcTask(request *model.StopGcTaskRequest) (*model.StopGcTaskResponse, error) {
+	requestDef := GenReqDefForStopGcTask()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.StopGcTaskResponse), nil
+	}
+}
+
+// StopGcTaskInvoker 停止制品清理任务
+func (c *SwrClient) StopGcTaskInvoker(request *model.StopGcTaskRequest) *StopGcTaskInvoker {
+	requestDef := GenReqDefForStopGcTask()
+	return &StopGcTaskInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // StopInstanceReplicationPolicyExecution 停止镜像同步任务
 //
 // 停止镜像同步任务
@@ -3230,6 +3335,27 @@ func (c *SwrClient) UpdateDomainName(request *model.UpdateDomainNameRequest) (*m
 func (c *SwrClient) UpdateDomainNameInvoker(request *model.UpdateDomainNameRequest) *UpdateDomainNameInvoker {
 	requestDef := GenReqDefForUpdateDomainName()
 	return &UpdateDomainNameInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// UpdateGcSchedule 配置制品清理计划
+//
+// 配置制品清理计划
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *SwrClient) UpdateGcSchedule(request *model.UpdateGcScheduleRequest) (*model.UpdateGcScheduleResponse, error) {
+	requestDef := GenReqDefForUpdateGcSchedule()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.UpdateGcScheduleResponse), nil
+	}
+}
+
+// UpdateGcScheduleInvoker 配置制品清理计划
+func (c *SwrClient) UpdateGcScheduleInvoker(request *model.UpdateGcScheduleRequest) *UpdateGcScheduleInvoker {
+	requestDef := GenReqDefForUpdateGcSchedule()
+	return &UpdateGcScheduleInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // UpdateImmutableRule 修改不可变Tag策略

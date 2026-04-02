@@ -18,7 +18,7 @@ type CreatePremiumHostResponse struct {
 	// 防护域名
 	Hostname *string `json:"hostname,omitempty"`
 
-	// **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同事 **默认取值：** 不涉及
+	// **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同时 **默认取值：** 不涉及
 	Protocol *CreatePremiumHostResponseProtocol `json:"protocol,omitempty"`
 
 	// 防护域名的源站服务器配置信息

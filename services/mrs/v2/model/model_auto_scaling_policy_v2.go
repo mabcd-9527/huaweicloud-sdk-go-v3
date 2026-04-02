@@ -14,7 +14,7 @@ type AutoScalingPolicyV2 struct {
 	// 资源池名称。必填参数。当集群版本不支持按指定资源池进行弹性伸缩时，需要填写为default资源池。不为default时删除指定资源池维度的弹性伸缩策略。
 	ResourcePoolName string `json:"resource_pool_name"`
 
-	AutoScalingPolicy *AutoScalingPolicyInfo `json:"auto_scaling_policy,omitempty"`
+	AutoScalingPolicy *AutoScalingPolicyInfo `json:"auto_scaling_policy"`
 }
 
 func (o AutoScalingPolicyV2) String() string {

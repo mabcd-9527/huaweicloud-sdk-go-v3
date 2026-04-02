@@ -2037,6 +2037,22 @@ func (i *ModifyParameterConfigTemplateInvoker) Invoke() (*model.ModifyParameterC
 	}
 }
 
+type ModifySecurityGroupInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ModifySecurityGroupInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ModifySecurityGroupInvoker) Invoke() (*model.ModifySecurityGroupResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ModifySecurityGroupResponse), nil
+	}
+}
+
 type ResetConfigurationInvoker struct {
 	*invoker.BaseInvoker
 }

@@ -18,7 +18,7 @@ type UpdateCveAllowlistRequest struct {
 	// 漏洞白名单的有效期时间，以自 1970 年 1 月 1 日以来的秒数表示；如果没有配置，则永不过期
 	ExpiresAt *int32 `json:"expires_at,omitempty"`
 
-	// 漏洞列表
+	// 漏洞列表，最多支持100条数据，且不能有重复漏洞。
 	Items *[]CveAllowlistItem `json:"items,omitempty"`
 }
 

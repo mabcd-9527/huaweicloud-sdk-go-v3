@@ -39,7 +39,7 @@ type ShowJobExeListNewRequest struct {
 	// 返回结果中每页显示条数。缺省值：10
 	Limit *string `json:"limit,omitempty"`
 
-	// 表示作业列表从该偏移量开始查询。缺省值：0
+	// 表示作业列表从该偏移量开始查询。缺省值：1
 	Offset *string `json:"offset,omitempty"`
 
 	// 返回结果的排序方式，默认值为desc。 - asc：按升序排列 - desc：按降序排列

@@ -232,7 +232,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/blob/mas
     * [2.4.1 Environment Variables](#241-environment-variables-top)
     * [2.4.2 Profile](#242-profile-top)
     * [2.4.3 Metadata](#243-metadata-top)
-    * [2.4.4 Provider Chain](#244-provider-chain-top)
+    * [2.4.4 Pod Identity](#244-pod-identity-top)
+    * [2.4.5 Provider Chain](#245-provider-chain-top)
 * [3. Client Initialization](#3-client-initialization-top)
   * [3.1 Initialize client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
   * [3.2 Initialize client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
@@ -687,9 +688,27 @@ globalProvider := provider.GlobalCredentialMetadataProvider()
 globalCred, err := globalProvider.GetCredentials()
 ```
 
-##### 2.4.4 Provider Chain [:top:](#user-manual-top)
+##### 2.4.4 Pod Identity [:top:](#user-manual-top)
 
-When creating a service client without credentials, try to load authentication in the order **Environment Variables -> Profile -> Metadata**
+Starting from version `v0.1.191`, obtaining temporary AK/SK and security token using Pod Identity in CCE clusters is supported.
+
+Refer to [Pod Identity](https://support.huaweicloud.com/usermanual-cce/cce_10_1110.html) for more information.
+
+```go
+import "github.com/huaweicloud/huaweicloud-sdk-go-v3/core/auth/provider"
+
+// basic
+basicProvider := provider.BasicCredentialPodIdentityProvider()
+basicCred, err := basicProvider.GetCredentials()
+
+// global
+globalProvider := provider.GlobalCredentialPodIdentityProvider()
+globalCred, err := globalProvider.GetCredentials()
+```
+
+##### 2.4.5 Provider Chain [:top:](#user-manual-top)
+
+When creating a service client without credentials, try to load authentication in the order **Environment Variables -> Profile -> Metadata -> Pod Identity**
 
 Get authentication from provider chain:
 

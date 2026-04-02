@@ -9,13 +9,13 @@ import (
 type AutoScalingPolicyInfo struct {
 
 	// 当前自动伸缩规则是否开启。
-	AutoScalingEnable bool `json:"auto_scaling_enable"`
+	AutoScalingEnable *bool `json:"auto_scaling_enable,omitempty"`
 
 	// 指定该节点组的最小保留节点数。 取值范围：[0～500]
-	MinCapacity int32 `json:"min_capacity"`
+	MinCapacity *int32 `json:"min_capacity,omitempty"`
 
 	// 指定该节点组的最大节点数。 取值范围：[0～500]
-	MaxCapacity int32 `json:"max_capacity"`
+	MaxCapacity *int32 `json:"max_capacity,omitempty"`
 
 	// 资源计划列表。若该参数为空表示不启用资源计划。  当启用弹性伸缩时，资源计划与自动伸缩规则需至少配置其中一种。
 	ResourcesPlans *[]ResourcesPlan `json:"resources_plans,omitempty"`

@@ -10,10 +10,13 @@ import (
 var (
 	AP_SOUTHEAST_1 = region.NewRegion("ap-southeast-1",
 		"https://bss-intl.myhuaweicloud.com")
+	EU_WEST_101 = region.NewRegion("eu-west-101",
+		"https://bss.myhuaweicloud.eu")
 )
 
 var staticFields = map[string]*region.Region{
 	"ap-southeast-1": AP_SOUTHEAST_1,
+	"eu-west-101":    EU_WEST_101,
 }
 
 var provider = region.DefaultProviderChain("BSSINTL")
