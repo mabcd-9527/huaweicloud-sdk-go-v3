@@ -95,8 +95,11 @@ type ShowServerResponse struct {
 	AgentVersion *string `json:"agent_version,omitempty"`
 
 	// 是否安装tc组件，Linux系统此参数为必选
-	HasTc          *bool `json:"has_tc,omitempty"`
-	HttpStatusCode int   `json:"-"`
+	HasTc *bool `json:"has_tc,omitempty"`
+
+	// 启动方式 可以取值MANUAL、AUTO或者空，不进行校验。 默认值取值MANUAL，其余则表示从MGC平台启动
+	StartType      *string `json:"start_type,omitempty"`
+	HttpStatusCode int     `json:"-"`
 }
 
 func (o ShowServerResponse) String() string {

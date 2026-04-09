@@ -16,6 +16,8 @@ type OrganizationPolicyAssignmentRequest struct {
 	OrganizationPolicyAssignmentName string `json:"organization_policy_assignment_name"`
 
 	ManagedPolicyAssignmentMetadata *ManagedPolicyAssignmentMetadata `json:"managed_policy_assignment_metadata,omitempty"`
+
+	CustomPolicyAssignmentMetadata *CustomPolicyAssignmentMetadata `json:"custom_policy_assignment_metadata,omitempty"`
 }
 
 func (o OrganizationPolicyAssignmentRequest) String() string {

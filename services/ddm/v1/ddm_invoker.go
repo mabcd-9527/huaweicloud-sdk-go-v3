@@ -325,6 +325,22 @@ func (i *CreateDdmInstanceInvoker) Invoke() (*model.CreateDdmInstanceResponse, e
 	}
 }
 
+type CreateDdmUserInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *CreateDdmUserInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *CreateDdmUserInvoker) Invoke() (*model.CreateDdmUserResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.CreateDdmUserResponse), nil
+	}
+}
+
 type CreateGroupInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -434,6 +450,22 @@ func (i *DeleteDdmInstanceInvoker) Invoke() (*model.DeleteDdmInstanceResponse, e
 		return nil, err
 	} else {
 		return result.(*model.DeleteDdmInstanceResponse), nil
+	}
+}
+
+type DeleteDdmUserInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *DeleteDdmUserInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *DeleteDdmUserInvoker) Invoke() (*model.DeleteDdmUserResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.DeleteDdmUserResponse), nil
 	}
 }
 
@@ -690,6 +722,22 @@ func (i *ListDdmFlavorsInvoker) Invoke() (*model.ListDdmFlavorsResponse, error) 
 		return nil, err
 	} else {
 		return result.(*model.ListDdmFlavorsResponse), nil
+	}
+}
+
+type ListDdmUsersInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ListDdmUsersInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ListDdmUsersInvoker) Invoke() (*model.ListDdmUsersResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ListDdmUsersResponse), nil
 	}
 }
 
@@ -962,6 +1010,22 @@ func (i *ResetAdministratorInvoker) Invoke() (*model.ResetAdministratorResponse,
 		return nil, err
 	} else {
 		return result.(*model.ResetAdministratorResponse), nil
+	}
+}
+
+type ResetDdmUserPasswordInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ResetDdmUserPasswordInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ResetDdmUserPasswordInvoker) Invoke() (*model.ResetDdmUserPasswordResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ResetDdmUserPasswordResponse), nil
 	}
 }
 
@@ -1509,6 +1573,22 @@ func (i *UpdateDatabaseInfoInvoker) Invoke() (*model.UpdateDatabaseInfoResponse,
 	}
 }
 
+type UpdateDdmUserInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *UpdateDdmUserInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *UpdateDdmUserInvoker) Invoke() (*model.UpdateDdmUserResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.UpdateDdmUserResponse), nil
+	}
+}
+
 type UpdateInstanceNameInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1717,6 +1797,22 @@ func (i *ListInstancesConfigurationsInvoker) Invoke() (*model.ListInstancesConfi
 	}
 }
 
+type MoveTmlogFilesInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *MoveTmlogFilesInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *MoveTmlogFilesInvoker) Invoke() (*model.MoveTmlogFilesResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.MoveTmlogFilesResponse), nil
+	}
+}
+
 type ResetParameterGroupInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1733,6 +1829,22 @@ func (i *ResetParameterGroupInvoker) Invoke() (*model.ResetParameterGroupRespons
 	}
 }
 
+type SetReadOnlyStatusInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *SetReadOnlyStatusInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *SetReadOnlyStatusInvoker) Invoke() (*model.SetReadOnlyStatusResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.SetReadOnlyStatusResponse), nil
+	}
+}
+
 type ShowDdmDetailInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -1746,6 +1858,22 @@ func (i *ShowDdmDetailInvoker) Invoke() (*model.ShowDdmDetailResponse, error) {
 		return nil, err
 	} else {
 		return result.(*model.ShowDdmDetailResponse), nil
+	}
+}
+
+type ShowTmlogInfosInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ShowTmlogInfosInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ShowTmlogInfosInvoker) Invoke() (*model.ShowTmlogInfosResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ShowTmlogInfosResponse), nil
 	}
 }
 

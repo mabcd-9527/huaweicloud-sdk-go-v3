@@ -229,6 +229,27 @@ func (c *GaussDBforopenGaussClient) CancelScheduleTaskInvoker(request *model.Can
 	return &CancelScheduleTaskInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ChangeDemand2Period 按需转包周期
+//
+// 按需转包周期
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBforopenGaussClient) ChangeDemand2Period(request *model.ChangeDemand2PeriodRequest) (*model.ChangeDemand2PeriodResponse, error) {
+	requestDef := GenReqDefForChangeDemand2Period()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ChangeDemand2PeriodResponse), nil
+	}
+}
+
+// ChangeDemand2PeriodInvoker 按需转包周期
+func (c *GaussDBforopenGaussClient) ChangeDemand2PeriodInvoker(request *model.ChangeDemand2PeriodRequest) *ChangeDemand2PeriodInvoker {
+	requestDef := GenReqDefForChangeDemand2Period()
+	return &ChangeDemand2PeriodInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ConfirmRestoredData 备份恢复到目标实例数据后执行数据确认
 //
 // 确认备份恢复到目标实例的数据正常。
@@ -4049,6 +4070,48 @@ func (c *GaussDBforopenGaussClient) SwitchLogCollectionStatus(request *model.Swi
 func (c *GaussDBforopenGaussClient) SwitchLogCollectionStatusInvoker(request *model.SwitchLogCollectionStatusRequest) *SwitchLogCollectionStatusInvoker {
 	requestDef := GenReqDefForSwitchLogCollectionStatus()
 	return &SwitchLogCollectionStatusInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// SwitchLoggerReplica 一主两备切换一主一备一日志
+//
+// 一主两备切换一主一备一日志
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBforopenGaussClient) SwitchLoggerReplica(request *model.SwitchLoggerReplicaRequest) (*model.SwitchLoggerReplicaResponse, error) {
+	requestDef := GenReqDefForSwitchLoggerReplica()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.SwitchLoggerReplicaResponse), nil
+	}
+}
+
+// SwitchLoggerReplicaInvoker 一主两备切换一主一备一日志
+func (c *GaussDBforopenGaussClient) SwitchLoggerReplicaInvoker(request *model.SwitchLoggerReplicaRequest) *SwitchLoggerReplicaInvoker {
+	requestDef := GenReqDefForSwitchLoggerReplica()
+	return &SwitchLoggerReplicaInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// SwitchLoggerReplicaAvailabilityZones 选择日志节点AZ
+//
+// 选择日志节点AZ
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *GaussDBforopenGaussClient) SwitchLoggerReplicaAvailabilityZones(request *model.SwitchLoggerReplicaAvailabilityZonesRequest) (*model.SwitchLoggerReplicaAvailabilityZonesResponse, error) {
+	requestDef := GenReqDefForSwitchLoggerReplicaAvailabilityZones()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.SwitchLoggerReplicaAvailabilityZonesResponse), nil
+	}
+}
+
+// SwitchLoggerReplicaAvailabilityZonesInvoker 选择日志节点AZ
+func (c *GaussDBforopenGaussClient) SwitchLoggerReplicaAvailabilityZonesInvoker(request *model.SwitchLoggerReplicaAvailabilityZonesRequest) *SwitchLoggerReplicaAvailabilityZonesInvoker {
+	requestDef := GenReqDefForSwitchLoggerReplicaAvailabilityZones()
+	return &SwitchLoggerReplicaAvailabilityZonesInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // SwitchReplica 分布式实例一主一备一日志形态切换到一主两备形态

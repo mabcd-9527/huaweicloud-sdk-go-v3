@@ -439,6 +439,27 @@ func (c *DdmClient) CreateDdmInstanceInvoker(request *model.CreateDdmInstanceReq
 	return &CreateDdmInstanceInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// CreateDdmUser 创建账号
+//
+// 账号用于连接和管理逻辑库。一个DDM账号可以关联多个逻辑库。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) CreateDdmUser(request *model.CreateDdmUserRequest) (*model.CreateDdmUserResponse, error) {
+	requestDef := GenReqDefForCreateDdmUser()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.CreateDdmUserResponse), nil
+	}
+}
+
+// CreateDdmUserInvoker 创建账号
+func (c *DdmClient) CreateDdmUserInvoker(request *model.CreateDdmUserRequest) *CreateDdmUserInvoker {
+	requestDef := GenReqDefForCreateDdmUser()
+	return &CreateDdmUserInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // CreateGroup 创建组
 //
 // 创建组
@@ -586,6 +607,27 @@ func (c *DdmClient) DeleteDdmInstance(request *model.DeleteDdmInstanceRequest) (
 func (c *DdmClient) DeleteDdmInstanceInvoker(request *model.DeleteDdmInstanceRequest) *DeleteDdmInstanceInvoker {
 	requestDef := GenReqDefForDeleteDdmInstance()
 	return &DeleteDdmInstanceInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// DeleteDdmUser 删除账号
+//
+// 删除账号。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) DeleteDdmUser(request *model.DeleteDdmUserRequest) (*model.DeleteDdmUserResponse, error) {
+	requestDef := GenReqDefForDeleteDdmUser()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.DeleteDdmUserResponse), nil
+	}
+}
+
+// DeleteDdmUserInvoker 删除账号
+func (c *DdmClient) DeleteDdmUserInvoker(request *model.DeleteDdmUserRequest) *DeleteDdmUserInvoker {
+	requestDef := GenReqDefForDeleteDdmUser()
+	return &DeleteDdmUserInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // DeleteGroup 删除实例组
@@ -922,6 +964,27 @@ func (c *DdmClient) ListDdmFlavors(request *model.ListDdmFlavorsRequest) (*model
 func (c *DdmClient) ListDdmFlavorsInvoker(request *model.ListDdmFlavorsRequest) *ListDdmFlavorsInvoker {
 	requestDef := GenReqDefForListDdmFlavors()
 	return &ListDdmFlavorsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ListDdmUsers 查询账号列表
+//
+// 查询账号列表。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) ListDdmUsers(request *model.ListDdmUsersRequest) (*model.ListDdmUsersResponse, error) {
+	requestDef := GenReqDefForListDdmUsers()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ListDdmUsersResponse), nil
+	}
+}
+
+// ListDdmUsersInvoker 查询账号列表
+func (c *DdmClient) ListDdmUsersInvoker(request *model.ListDdmUsersRequest) *ListDdmUsersInvoker {
+	requestDef := GenReqDefForListDdmUsers()
+	return &ListDdmUsersInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // ListDdms 查询实例列表
@@ -1279,6 +1342,27 @@ func (c *DdmClient) ResetAdministrator(request *model.ResetAdministratorRequest)
 func (c *DdmClient) ResetAdministratorInvoker(request *model.ResetAdministratorRequest) *ResetAdministratorInvoker {
 	requestDef := GenReqDefForResetAdministrator()
 	return &ResetAdministratorInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ResetDdmUserPassword 重置账号密码
+//
+// 重置现有账号的密码。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) ResetDdmUserPassword(request *model.ResetDdmUserPasswordRequest) (*model.ResetDdmUserPasswordResponse, error) {
+	requestDef := GenReqDefForResetDdmUserPassword()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ResetDdmUserPasswordResponse), nil
+	}
+}
+
+// ResetDdmUserPasswordInvoker 重置账号密码
+func (c *DdmClient) ResetDdmUserPasswordInvoker(request *model.ResetDdmUserPasswordRequest) *ResetDdmUserPasswordInvoker {
+	requestDef := GenReqDefForResetDdmUserPassword()
+	return &ResetDdmUserPasswordInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // ResetUserPassword 重置DDM账号密码
@@ -1995,6 +2079,27 @@ func (c *DdmClient) UpdateDatabaseInfoInvoker(request *model.UpdateDatabaseInfoR
 	return &UpdateDatabaseInfoInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// UpdateDdmUser 修改账号
+//
+// 修改现有DDM账号的权限或者与逻辑库的关联关系。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) UpdateDdmUser(request *model.UpdateDdmUserRequest) (*model.UpdateDdmUserResponse, error) {
+	requestDef := GenReqDefForUpdateDdmUser()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.UpdateDdmUserResponse), nil
+	}
+}
+
+// UpdateDdmUserInvoker 修改账号
+func (c *DdmClient) UpdateDdmUserInvoker(request *model.UpdateDdmUserRequest) *UpdateDdmUserInvoker {
+	requestDef := GenReqDefForUpdateDdmUser()
+	return &UpdateDdmUserInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // UpdateInstanceName 修改DDM实例名称
 //
 // 修改DDM实例名称。
@@ -2268,6 +2373,28 @@ func (c *DdmClient) ListInstancesConfigurationsInvoker(request *model.ListInstan
 	return &ListInstancesConfigurationsInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// MoveTmlogFiles 移动TMLOG文件
+//
+// 移动TMLOG文件
+// 将当前的TMLOG文件压缩移动到备份目录下
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) MoveTmlogFiles(request *model.MoveTmlogFilesRequest) (*model.MoveTmlogFilesResponse, error) {
+	requestDef := GenReqDefForMoveTmlogFiles()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.MoveTmlogFilesResponse), nil
+	}
+}
+
+// MoveTmlogFilesInvoker 移动TMLOG文件
+func (c *DdmClient) MoveTmlogFilesInvoker(request *model.MoveTmlogFilesRequest) *MoveTmlogFilesInvoker {
+	requestDef := GenReqDefForMoveTmlogFiles()
+	return &MoveTmlogFilesInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ResetParameterGroup 更新参数组V3
 //
 // 更新参数组V3
@@ -2289,6 +2416,27 @@ func (c *DdmClient) ResetParameterGroupInvoker(request *model.ResetParameterGrou
 	return &ResetParameterGroupInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// SetReadOnlyStatus 设置实例只读状态V3
+//
+// 设置实例只读状态V3
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) SetReadOnlyStatus(request *model.SetReadOnlyStatusRequest) (*model.SetReadOnlyStatusResponse, error) {
+	requestDef := GenReqDefForSetReadOnlyStatus()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.SetReadOnlyStatusResponse), nil
+	}
+}
+
+// SetReadOnlyStatusInvoker 设置实例只读状态V3
+func (c *DdmClient) SetReadOnlyStatusInvoker(request *model.SetReadOnlyStatusRequest) *SetReadOnlyStatusInvoker {
+	requestDef := GenReqDefForSetReadOnlyStatus()
+	return &SetReadOnlyStatusInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // ShowDdmDetail 查询实例详情V3
 //
 // 查询实例详情V3
@@ -2308,6 +2456,28 @@ func (c *DdmClient) ShowDdmDetail(request *model.ShowDdmDetailRequest) (*model.S
 func (c *DdmClient) ShowDdmDetailInvoker(request *model.ShowDdmDetailRequest) *ShowDdmDetailInvoker {
 	requestDef := GenReqDefForShowDdmDetail()
 	return &ShowDdmDetailInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
+// ShowTmlogInfos 查询TMLOG信息
+//
+// 查询TMLOG信息
+// TMLOG记录XA事务信息，用以支持事务恢复
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *DdmClient) ShowTmlogInfos(request *model.ShowTmlogInfosRequest) (*model.ShowTmlogInfosResponse, error) {
+	requestDef := GenReqDefForShowTmlogInfos()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ShowTmlogInfosResponse), nil
+	}
+}
+
+// ShowTmlogInfosInvoker 查询TMLOG信息
+func (c *DdmClient) ShowTmlogInfosInvoker(request *model.ShowTmlogInfosRequest) *ShowTmlogInfosInvoker {
+	requestDef := GenReqDefForShowTmlogInfos()
+	return &ShowTmlogInfosInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
 // BatchModifyReadWriteStrategy 批量设置读策略V3

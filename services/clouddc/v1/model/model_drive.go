@@ -33,8 +33,8 @@ type Drive struct {
 	// 驱动器遵从的协议
 	Protocol *string `json:"protocol,omitempty"`
 
-	// SAS地址
-	SasAddress *string `json:"sas_address,omitempty"`
+	// 驱动器SAS地址
+	SasAddress *[]string `json:"sas_address,omitempty"`
 
 	// 容量（单位：byte）
 	CapacityBytes *int64 `json:"capacity_bytes,omitempty"`

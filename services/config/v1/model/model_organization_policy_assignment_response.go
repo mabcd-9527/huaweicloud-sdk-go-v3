@@ -32,6 +32,8 @@ type OrganizationPolicyAssignmentResponse struct {
 
 	PolicyFilter *PolicyFilterDefinition `json:"policy_filter,omitempty"`
 
+	PolicyFilterV2 *PolicyFilterDefinitionV2 `json:"policy_filter_v2,omitempty"`
+
 	// 规则参数。
 	Parameters map[string]PolicyParameterValue `json:"parameters,omitempty"`
 

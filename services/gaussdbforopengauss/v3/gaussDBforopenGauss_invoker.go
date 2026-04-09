@@ -165,6 +165,22 @@ func (i *CancelScheduleTaskInvoker) Invoke() (*model.CancelScheduleTaskResponse,
 	}
 }
 
+type ChangeDemand2PeriodInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ChangeDemand2PeriodInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ChangeDemand2PeriodInvoker) Invoke() (*model.ChangeDemand2PeriodResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ChangeDemand2PeriodResponse), nil
+	}
+}
+
 type ConfirmRestoredDataInvoker struct {
 	*invoker.BaseInvoker
 }
@@ -3074,6 +3090,38 @@ func (i *SwitchLogCollectionStatusInvoker) Invoke() (*model.SwitchLogCollectionS
 		return nil, err
 	} else {
 		return result.(*model.SwitchLogCollectionStatusResponse), nil
+	}
+}
+
+type SwitchLoggerReplicaInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *SwitchLoggerReplicaInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *SwitchLoggerReplicaInvoker) Invoke() (*model.SwitchLoggerReplicaResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.SwitchLoggerReplicaResponse), nil
+	}
+}
+
+type SwitchLoggerReplicaAvailabilityZonesInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *SwitchLoggerReplicaAvailabilityZonesInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *SwitchLoggerReplicaAvailabilityZonesInvoker) Invoke() (*model.SwitchLoggerReplicaAvailabilityZonesResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.SwitchLoggerReplicaAvailabilityZonesResponse), nil
 	}
 }
 

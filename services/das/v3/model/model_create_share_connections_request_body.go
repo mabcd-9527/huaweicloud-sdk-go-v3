@@ -14,6 +14,9 @@ type CreateShareConnectionsRequestBody struct {
 	// 过期时间
 	ExpiredTime *string `json:"expired_time,omitempty"`
 
+	// 时区
+	Timezone *string `json:"timezone,omitempty"`
+
 	// 用户
 	Users []ShareConnUserInfo `json:"users"`
 }

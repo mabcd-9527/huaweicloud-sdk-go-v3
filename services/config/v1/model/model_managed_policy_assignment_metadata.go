@@ -23,6 +23,8 @@ type ManagedPolicyAssignmentMetadata struct {
 
 	PolicyFilter *PolicyFilterDefinition `json:"policy_filter,omitempty"`
 
+	PolicyFilterV2 *PolicyFilterDefinitionV2 `json:"policy_filter_v2,omitempty"`
+
 	// 预定义策略标识符。
 	PolicyDefinitionId string `json:"policy_definition_id"`
 }

@@ -15,8 +15,8 @@ type BatchAddTestCaseResultInTaskInfo struct {
 	// 测试套结果URI
 	TaskResultUri *string `json:"task_result_uri,omitempty"`
 
-	// 用例uri
-	TestCaseUris *string `json:"test_case_uris,omitempty"`
+	// 用例uri列表
+	TestCaseUris *[]string `json:"test_case_uris,omitempty"`
 
 	// 是否异步执行
 	IsAsyn *bool `json:"isAsyn,omitempty"`

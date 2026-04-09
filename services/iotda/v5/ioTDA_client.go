@@ -442,6 +442,27 @@ func (c *IoTDAClient) UpdateRoutingBacklogPolicyInvoker(request *model.UpdateRou
 	return &UpdateRoutingBacklogPolicyInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
 }
 
+// ConfirmBatchTask 确认执行批量任务
+//
+// 应用服务器可调用此接口确执行认批量任务，目前只支持task_type为firmwareUpgrade，softwareUpgrade和moduleUpgrade。如果task_id对应任务已经完成（成功、失败、部分成功，已经停止）或正在停止中，则不可以调用该接口。如果请求Body为{}，则调用该接口后会确认执行所有处于等待中状态子任务。
+//
+// Please refer to HUAWEI cloud API Explorer for details.
+func (c *IoTDAClient) ConfirmBatchTask(request *model.ConfirmBatchTaskRequest) (*model.ConfirmBatchTaskResponse, error) {
+	requestDef := GenReqDefForConfirmBatchTask()
+
+	if resp, err := c.HcClient.Sync(request, requestDef); err != nil {
+		return nil, err
+	} else {
+		return resp.(*model.ConfirmBatchTaskResponse), nil
+	}
+}
+
+// ConfirmBatchTaskInvoker 确认执行批量任务
+func (c *IoTDAClient) ConfirmBatchTaskInvoker(request *model.ConfirmBatchTaskRequest) *ConfirmBatchTaskInvoker {
+	requestDef := GenReqDefForConfirmBatchTask()
+	return &ConfirmBatchTaskInvoker{invoker.NewBaseInvoker(c.HcClient, request, requestDef)}
+}
+
 // CreateBatchTask 创建批量任务
 //
 // 应用服务器可调用此接口为创建批量处理任务，对多个设备进行批量操作。当前支持批量软固件升级、批量创建设备、批量删除设备、批量冻结设备、批量解冻设备、批量创建命令、批量创建消息任务。

@@ -9,7 +9,7 @@ import (
 // UnbindEipResponse Response Object
 type UnbindEipResponse struct {
 
-	// 任务id
+	// **参数解释**：  工作流ID。  **取值范围**：  不涉及。
 	JobId          *string `json:"job_id,omitempty"`
 	HttpStatusCode int     `json:"-"`
 }

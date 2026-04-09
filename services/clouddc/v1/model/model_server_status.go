@@ -20,7 +20,7 @@ type ServerStatus struct {
 
 	Health *ServerState `json:"health"`
 
-	Unhealth *ServerState `json:"unhealth,omitempty"`
+	UnHealth *ServerState `json:"unHealth"`
 
 	Isolation *ServerState `json:"isolation"`
 }

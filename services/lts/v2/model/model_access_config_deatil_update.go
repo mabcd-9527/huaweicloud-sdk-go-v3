@@ -27,6 +27,9 @@ type AccessConfigDeatilUpdate struct {
 	// 标准输出开关标准错误开关，仅CCE接入类型时使用
 	Stderr *bool `json:"stderr,omitempty"`
 
+	// **参数解释：** 云容器引擎CCE应用日志接入时，是否将标准输出和标准错误采集到同一个文件。 **取值范围：** - true：将标准输出和标准错误采集到同一个文件（stdout.log）。 - false：将标准输出和标准错误采集到不同的文件（stdout.log和stderr.log）。
+	CombineStdout *bool `json:"combine_stdout,omitempty"`
+
 	// CCE接入类型，仅CCE接入类型时使用
 	PathType *AccessConfigDeatilUpdatePathType `json:"pathType,omitempty"`
 

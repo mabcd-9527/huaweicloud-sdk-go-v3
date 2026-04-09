@@ -325,6 +325,22 @@ func (i *UpdateRoutingBacklogPolicyInvoker) Invoke() (*model.UpdateRoutingBacklo
 	}
 }
 
+type ConfirmBatchTaskInvoker struct {
+	*invoker.BaseInvoker
+}
+
+func (i *ConfirmBatchTaskInvoker) GetBaseInvoker() *invoker.BaseInvoker {
+	return i.BaseInvoker
+}
+
+func (i *ConfirmBatchTaskInvoker) Invoke() (*model.ConfirmBatchTaskResponse, error) {
+	if result, err := i.BaseInvoker.Invoke(); err != nil {
+		return nil, err
+	} else {
+		return result.(*model.ConfirmBatchTaskResponse), nil
+	}
+}
+
 type CreateBatchTaskInvoker struct {
 	*invoker.BaseInvoker
 }
